@@ -1,0 +1,8 @@
+<section>
+    @for (item of components; track $index) {
+    <div [routerLink]="item.url">
+        <h3>{{item.name}}</h3>
+        <p>{{item.useCase}}</p>
+    </div>
+    }
+</section>
