@@ -21,14 +21,9 @@ export class HomeComponent {
       url: "/HTML",
     },
     {
-      name: "CSS Tricks",
-      useCase: "Some CSS styles",
-      url: "/CSS",
-    },
-    {
-      name: "CSS Tricks",
-      useCase: "Some CSS styles",
-      url: "/CSS",
+      name: "JS Basics",
+      useCase: "Some JS Basic functions",
+      url: "/JS",
     },
   ]
 }

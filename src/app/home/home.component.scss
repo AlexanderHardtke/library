@@ -1,13 +1,22 @@
 section {
     display: flex;
     flex-wrap: wrap;
+    gap: 16px;
+    padding-left: 16px;
+    padding-top: 16px;
+    
+    h1 {
+        text-align: center;
+        width: 100%;
+        position: relative;
+        font-size: 36px;
+    }
 }
 
 div {
     background-color:darkmagenta;
-    height: 120px;
-    width: 120px;
-    margin: 16px;
+    height: 150px;
+    width: 150px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -15,4 +24,5 @@ div {
     align-items: center;
     text-align: center;
     padding: 12px;
+    border-radius: 12px;
 }
