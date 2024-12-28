@@ -25,5 +25,10 @@ export class HomeComponent {
       useCase: "Some JS Basic functions",
       url: "/JS",
     },
+    {
+      name: "Angular",
+      useCase: "Widely used Angular Components",
+      url: "/Angular",
+    },
   ]
 }
