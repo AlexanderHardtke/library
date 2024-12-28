@@ -1,0 +1,61 @@
+section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    place-content: center;
+}
+
+div {
+    background-color: darkmagenta;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.tipp-1 {
+    position: relative;
+
+    h3 {
+        width: 100%;
+    }
+
+    button {
+        float: left;
+        margin: 2px;
+        width: 20px;
+        height: 20px;
+        border: none;
+        border-radius: 50%;
+        background-color: limegreen;
+    }
+}
+
+.tipp-2 {}
+
+.tipp-3 {}
+
+.tipp-4 {}
+
+.tipp-5 {}
+
+.tipp-6 {}
+
+.tipp-7 {}
+
+.tipp-8 {}
+
+.tipp-9 {}
+
+.tipp-10 {}
+
+.tipp-11 {}
+
+.tipp-12 {}
+
+.tipp-13 {}
