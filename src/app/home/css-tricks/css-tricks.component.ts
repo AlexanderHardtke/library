@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-css-tricks',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './css-tricks.component.html',
   styleUrl: './css-tricks.component.scss'
 })

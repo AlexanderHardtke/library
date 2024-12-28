@@ -16,3 +16,34 @@ h1 {
     position: relative;
     font-size: 36px;
 }
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    place-content: center;
+
+    >div {
+        background-color: darkmagenta;
+        height: 200px;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+        align-items: center;
+        text-align: center;
+        padding: 12px;
+        border-radius: 12px;
+    }
+}
+
+.backBtn {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    padding: 8px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
