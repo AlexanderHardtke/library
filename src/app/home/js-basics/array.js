@@ -9,10 +9,29 @@ while (numbers.length > 0) {
             minIndex = i;
         }
     }
-
     // Entferne das kleinste Element aus `numbers` und füge es in `sortedNumbers` ein
     sortedNumbers.push(numbers[minIndex]);
     numbers.splice(minIndex, 1); // Entferne das Element aus `numbers`
 }
 
 console.log(sortedNumbers); // Ausgabe: [0, 1, 3, 4, 5, 7, 9, 15]
+
+
+function findFirstDoubleLetter(string) {
+    for (let i = 0; i < string.length - 1; i++) {
+        if (string[i] === string[i + 1]) {
+            return { position: i, letter: string[i] };
+        }
+    }
+    return { position: null, letter: null }; // Falls kein Doppel gefunden wird
+}
+
+// Beispiel
+const string = "lksanlienasioowlknewen";
+const result = findFirstDoubleLetter(string);
+
+if (result.position !== null) {
+    console.log(`Der erste doppelte Buchstabe ist '${result.letter}' an Position ${result.position}.`);
+} else {
+    console.log("Es gibt keine doppelten Buchstaben.");
+}
