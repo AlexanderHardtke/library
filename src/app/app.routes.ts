@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { HTMLComponent } from './home/html/html.component';
 import { JsBasicsComponent } from './home/js-basics/js-basics.component';
 import { AngularComponent } from './home/angular/angular.component';
+import { SimpleCrudComponent } from './home/simple-crud/simple-crud.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -11,4 +12,5 @@ export const routes: Routes = [
     { path: 'HTML', component: HTMLComponent },
     { path: 'JS', component: JsBasicsComponent },
     { path: 'Angular', component: AngularComponent },
+    { path: 'CRUD', component: SimpleCrudComponent },
 ];
