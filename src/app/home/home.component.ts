@@ -30,5 +30,10 @@ export class HomeComponent {
       useCase: "Widely used Angular Components",
       url: "/Angular",
     },
+    {
+      name: "CRUD",
+      useCase: "Simple CRUD for CRM",
+      url: "/CRUD",
+    },
   ]
 }
