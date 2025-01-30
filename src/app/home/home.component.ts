@@ -45,5 +45,10 @@ export class HomeComponent {
       useCase: "Git",
       url: "/GIT",
     },
+    {
+      name: "Backend",
+      useCase: "Backkend Infos",
+      url: "/BACK",
+    },
   ]
 }
