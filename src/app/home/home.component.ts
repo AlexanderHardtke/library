@@ -40,5 +40,10 @@ export class HomeComponent {
       useCase: "Angular Fire Authentication",
       url: "/AUTH",
     },
+    {
+      name: "Git Commands",
+      useCase: "Git",
+      url: "/GIT",
+    },
   ]
 }

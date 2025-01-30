@@ -6,6 +6,7 @@ import { JsBasicsComponent } from './home/js-basics/js-basics.component';
 import { AngularComponent } from './home/angular/angular.component';
 import { SimpleCrudComponent } from './home/simple-crud/simple-crud.component';
 import { AngularFireAuthenticationComponent } from './home/angular-fire-authentication/angular-fire-authentication.component';
+import { GitComponent } from './home/git/git.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -15,4 +16,5 @@ export const routes: Routes = [
     { path: 'Angular', component: AngularComponent },
     { path: 'CRUD', component: SimpleCrudComponent },
     { path: 'AUTH', component: AngularFireAuthenticationComponent },
+    { path: 'GIT', component: GitComponent },
 ];
