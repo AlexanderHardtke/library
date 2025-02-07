@@ -1,7 +1,7 @@
 <section>
     <h1>Backend Infos</h1><button routerLink="" class="backBtn">Back</button>
 
-    <div class="tipp-1">
+    <div>
         <h3>Tipp 1</h3>
         <h3>Content-type</h3>
         <p>text/html; charset=UTF-8<br>
@@ -11,7 +11,7 @@
     </div>
 
 
-    <div class="tipp-2">
+    <div>
         <h3>Tipp 2</h3>
         <h3>PIP-Befehle</h3>
         <p>pip install modulname<br>
@@ -21,7 +21,7 @@
     </div>
 
 
-    <div class="tipp-3">
+    <div>
         <h3>Tipp 3</h3>
         <h3>Django</h3>
         <p>python -m venv env<br>
@@ -33,7 +33,7 @@
     </div>
 
 
-    <div class="tipp-4">
+    <div>
         <h3>Tipp 4</h3>
         <h3>VIP commands</h3>
         <p>"env/Scripts/activate"<br>
@@ -42,7 +42,7 @@
     </div>
 
 
-    <div class="tipp-5">
+    <div>
         <h3>Tipp 5</h3>
         <h3>Objekte in Datenbank erzeugen</h3>
         <p>Klasse Model.py erstellen<br>
@@ -51,10 +51,51 @@
             python manage.py shell(interaktive Konsole)<br>
             from sales.models import Customer(Name des Programms importiert Datenbank)<br>
             first_customer = Customer(first_name="Mandy", last_name="Musterfrau")<br>
+            first_customer.clean_fields() #Validierung<br>
             first_customer.save()<br>
             alternativ<br>
             Customer.objects.create(first_name="Rudolf", last_name="Mustermann")<br>
         </p>
+    </div>
+
+    <div>
+        <h3>Tipp 6</h3>
+        <h3></h3>
+        <p>
+            python manage.py shell(interaktive Konsole)<br>
+            Customer.objects.all()<br>
+            Customer.objects.get(first_name="Mandy")<br>
+            # geht nur wenn es nur einen eindeutigen gibt = 2 gleiche Vornamen ist Fehler, besser mit ID</p>
+    </div>
+
+    <div>
+        <h3>Tipp 7</h3>
+        <h3></h3>
+        <p></p>
+    </div>
+
+    <div>
+        <h3>Tipp 8</h3>
+        <h3></h3>
+        <p></p>
+    </div>
+
+    <div>
+        <h3>Tipp 9</h3>
+        <h3></h3>
+        <p></p>
+    </div>
+
+    <div>
+        <h3>Tipp 10</h3>
+        <h3></h3>
+        <p></p>
+    </div>
+
+    <div>
+        <h3>Tipp11</h3>
+        <h3></h3>
+        <p></p>
     </div>
 
 </section>
