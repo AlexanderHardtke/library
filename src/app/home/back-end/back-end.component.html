@@ -60,7 +60,7 @@
 
     <div>
         <h3>Tipp 6</h3>
-        <h3></h3>
+        <h3>Objekte read()</h3>
         <p>
             python manage.py shell(interaktive Konsole)<br>
             Customer.objects.all()<br>
@@ -70,8 +70,15 @@
 
     <div>
         <h3>Tipp 7</h3>
-        <h3></h3>
-        <p></p>
+        <h3>Objekte update and delete</h3>
+        <p>all_customer = Customer.objects.all()<br>
+            all_customer[1].delete()<br>
+            #löscht den Kunden<br>
+            all_customer[0].last_name<br>
+            single_customer = all_customer[0]<br>
+            single_customer.last_name = "Zwergerich"<br>
+            single_customer.save()
+        </p>
     </div>
 
     <div>
