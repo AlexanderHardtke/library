@@ -44,8 +44,17 @@
 
     <div class="tipp-5">
         <h3>Tipp 5</h3>
-        <h3></h3>
-        <p></p>
+        <h3>Objekte in Datenbank erzeugen</h3>
+        <p>Klasse Model.py erstellen<br>
+            python manage.py makemigrations<br>
+            python manage.py migrate<br>
+            python manage.py shell(interaktive Konsole)<br>
+            from sales.models import Customer(Name des Programms importiert Datenbank)<br>
+            first_customer = Customer(first_name="Mandy", last_name="Musterfrau")<br>
+            first_customer.save()<br>
+            alternativ<br>
+            Customer.objects.create(first_name="Rudolf", last_name="Mustermann")<br>
+        </p>
     </div>
 
 </section>
