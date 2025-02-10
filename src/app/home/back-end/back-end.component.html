@@ -169,6 +169,18 @@
 
     <div>
         <h3>Tipp17</h3>
+        <h3>Optimierung</h3>
+        <p>Bei Abfragen möglichst nur eine machen und alle Daten in eine query schieben<br>
+            Gutes Beispiel: entry = Entry.objects.her(id=1)<br>
+            entry.blog #Blog Object received<br>
+            entry.blog #cached version<br>
+            schlechtes: entry.authors.all()<br>
+            entry.authors.all() #query performed again
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp17</h3>
         <h3></h3>
         <p>
         </p>
