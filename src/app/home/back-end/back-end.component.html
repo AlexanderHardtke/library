@@ -140,14 +140,17 @@
             from django.db.models import Q<br>
             Bill.objects.filter(Q(is_paid=True) & Q(total_amount__gte="100")) = genau das gleiche
             Bill.objects.filter(Q(is_paid=True) | Q(total_amount__gte="100")) = jetzt geht oder
-            Bill.objects.exclude(Q(is_paid=True)  Q(total_amount__gte="100")) = genau Gegenstück zu filter<br>
+            Bill.objects.exclude(Q(is_paid=True) Q(total_amount__gte="100")) = genau Gegenstück zu filter<br>
         </p>
     </div>
 
     <div>
         <h3>Tipp15</h3>
-        <h3></h3>
-        <p>
+        <h3>Verschachtelung und order_by</h3>
+        <p>Customer.objects.all()[2].order_set.all()<br>
+            Customer.objects.all()[2].order_set.filter(bill__total_amount__lt=150) = verschachtelte Verbindung<br>
+            Customer.objects.order_by("-first_name") = Ordnet die Liste nach Vornamen z-a<br>
+            Order.objects.order_by("bill__total_amount")
         </p>
     </div>
 
