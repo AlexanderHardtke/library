@@ -112,8 +112,50 @@
 
     <div>
         <h3>Tipp11</h3>
+        <h3>Admin einrichten</h3>
+        <p>python manage.py createsuperuser</p>
+    </div>
+
+    <div>
+        <h3>Tipp12</h3>
+        <h3>Querys</h3>
+        <p>Bill.objects.filter(is_paid=True)<br>
+            Bill.objects.filter(total_amount__lt=105)<br>
+            lte = lower then equal, Filterschreibweise<br>
+            __exact = macht effektiv nichts</p>
+    </div>
+
+    <div>
+        <h3>Tipp13</h3>
+        <h3>SQL anzeigen lassen</h3>
+        <p>str(Customer.objects.filter(first_name__exact="John").query)<br>
+            Bill.objects.all()[:2] = die ersten 2<br>
+            Bill.objects.all()[2:3].get() = Bill.objects.all()[2]</p>
+    </div>
+
+    <div>
+        <h3>Tipp14</h3>
+        <h3>or filter</h3>
+        <p>Bill.objects.filter(is_paid=True, total_amount__gte="100")<br>
+            from django.db.models import Q<br>
+            Bill.objects.filter(Q(is_paid=True) & Q(total_amount__gte="100")) = genau das gleiche
+            Bill.objects.filter(Q(is_paid=True) | Q(total_amount__gte="100")) = jetzt geht oder
+            Bill.objects.exclude(Q(is_paid=True)  Q(total_amount__gte="100")) = genau Gegenstück zu filter<br>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp15</h3>
         <h3></h3>
-        <p></p>
+        <p>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp16</h3>
+        <h3></h3>
+        <p>
+        </p>
     </div>
 
 </section>
