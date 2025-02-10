@@ -156,6 +156,19 @@
 
     <div>
         <h3>Tipp16</h3>
+        <h3>aggregations = Berechnungen</h3>
+        <p>from django.db.models import Avg<br>
+            Bill.objects.aggregate(Avg("total_amount", default=0))<br>
+            Order.objects.aggregate(Avg("bill__total_amount", default=0))<br>
+            from django.db.models import Count<br>
+            orders = Customer.objects.annotate(num_orders=Count("order"))<br>
+            orders[0].num_orders = Anzahl der Orders für den Kunden 0
+        </p>
+    </div>
+
+
+    <div>
+        <h3>Tipp17</h3>
         <h3></h3>
         <p>
         </p>
