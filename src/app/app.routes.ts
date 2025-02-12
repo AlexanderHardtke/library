@@ -8,6 +8,7 @@ import { SimpleCrudComponent } from './home/simple-crud/simple-crud.component';
 import { AngularFireAuthenticationComponent } from './home/angular-fire-authentication/angular-fire-authentication.component';
 import { GitComponent } from './home/git/git.component';
 import { BackEndComponent } from './home/back-end/back-end.component';
+import { BackEndSerializerComponent } from './home/back-end-serializer/back-end-serializer.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -19,4 +20,5 @@ export const routes: Routes = [
     { path: 'AUTH', component: AngularFireAuthenticationComponent },
     { path: 'GIT', component: GitComponent },
     { path: 'BACK', component: BackEndComponent },
+    { path: 'SERIAL', component: BackEndSerializerComponent },
 ];
