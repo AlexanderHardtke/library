@@ -3,7 +3,8 @@
         <h3>Tipp1</h3>
         <h3>nested serializers</h3>
         <p>selbst gebaute serializer in many to many field einbauen<br>
-            markets = MarketSerializer(read_only=True)
+            markets = MarketSerializer(many=True, read_only=True)<br>
+            nested werden auch vorher mit.pop entfernt und im nachgang mit .set wieder hinzugefügt
         </p>
     </div>
     
