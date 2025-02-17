@@ -65,8 +65,14 @@
 
     <div>
         <h3>Tipp7</h3>
-        <h3></h3>
-        <p>
+        <h3>Beispiel für modifizierte ListView</h3>
+        <p>class SellerOfMarketList(generics.ListCreateAPIView):
+            serializer_class = SellersSerializer
+        
+            def get_queryset(self):
+                pk = self.kwargs.get('pk')
+                market = Market.objects.get(pk=pk)
+                return market.sellers.all()
         </p>
     </div>
 
