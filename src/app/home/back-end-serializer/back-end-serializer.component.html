@@ -46,7 +46,20 @@
     <div>
         <h3>Tipp6</h3>
         <h3>APIViews einfacher</h3>
-        <p>z.B. Mixins, 
+        <p>z.B. Mixins, Doku importieren und für jedes view Klasse machen<br>
+            class SellerView(mixins.ListModelMixin,
+                  mixins.CreateModelMixin,
+                  generics.GenericAPIView):
+    
+    queryset = Seller.objects.all()
+    serializer_class = SellersSerializer
+
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
         </p>
     </div>
 
