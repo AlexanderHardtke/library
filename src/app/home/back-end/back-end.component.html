@@ -190,8 +190,15 @@
 
     <div>
         <h3>Tipp19</h3>
-        <h3></h3>
-        <p>
+        <h3>tokenAuthentication</h3>
+        <p>REST_FRAMEWORK = {
+            'DEFAULT_PERMISSION_CLASSES': [
+                'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+            ],
+            'DEFAULT_AUTHENTICATION_CLASSES': [
+                'rest_framework.authentication.TokenAuthentication',
+            ],
+        }
         </p>
     </div>
 
