@@ -47,8 +47,13 @@ export class HomeComponent {
     },
     {
       name: "Backend",
-      useCase: "Backkend Infos",
+      useCase: "Backend Infos",
       url: "/BACK",
+    },
+    {
+      name: "Testing",
+      useCase: "Testing",
+      url: "/TESTING",
     },
   ]
 }
