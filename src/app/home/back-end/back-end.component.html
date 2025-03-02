@@ -204,8 +204,13 @@
 
     <div>
         <h3>Tipp20</h3>
-        <h3></h3>
-        <p>
+        <h3>Live-Server-Reload</h3>
+        <p>Die Lösung für die Live Server Erweiterung in VS Code ist, in die settings.json von VS Code zu gehen und Folgendes hinzuzufügen:
+
+            "liveServer.settings.fullReload": false,
+            "liveServer.settings.ignoreFiles": ["**/db.json"]
+            
+            Das bewirkt, dass Live Server db.json ignoriert und kein unerwünschtes Reload mehr auslöst.
         </p>
     </div>
 
