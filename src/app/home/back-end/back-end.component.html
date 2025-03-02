@@ -104,11 +104,7 @@
     <div>
         <h3>Tipp 10</h3>
         <h3>str überschreiben</h3>
-        <p>def __str__(self):<br>
-            return f"{self.first_name} {self.last_name}"<br>
-            in der Klasse<br>
-            customer = Customer.objects.all()[0]<br>
-            customer.order_set.all()</p>
+        <pre><code [innerHTML]="codeSnippetpy"></code></pre>
     </div>
 
     <div>
@@ -191,15 +187,8 @@
     <div>
         <h3>Tipp19</h3>
         <h3>tokenAuthentication</h3>
-        <p>REST_FRAMEWORK = {
-            'DEFAULT_PERMISSION_CLASSES': [
-                'rest_framework.permissions.IsAuthenticatedOrReadOnly',
-            ],
-            'DEFAULT_AUTHENTICATION_CLASSES': [
-                'rest_framework.authentication.TokenAuthentication',
-            ],
-        }
-        </p>
+        <pre><code [innerHTML]="codeSnippet"></code></pre>
+
     </div>
 
     <div>
