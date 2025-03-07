@@ -39,8 +39,23 @@
 
     <div>
         <h3>Tipp 5</h3>
-        <h3></h3>
-        <p>
+        <h3>Scooping in settings.py</h3>
+        <p>from rest_framework.throttling import UserRateThrottle
+
+            class Questionthrottle(UserRateThrottle):
+                scope = 'question'
+            
+                def allow_request(self, request, view):
+                    if request.method == "GET":# Beispiel um Get immer zu erlauben
+                        return True
+                    
+                    new_scope = 'question-' + request.method.lower() #teilweise im Framework nachschauen um Lösung zu kreiren
+                    if new_scope in self.THROTTLE_RATES:
+                        self.scope = new_scope
+                        self.rate = self.get_rate()
+                        self.num_requests, self.duration = self.parse_rate(self.rate)
+                    
+                    return super().allow_request(request, view)
         </p>
     </div>
 
