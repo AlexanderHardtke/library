@@ -7,7 +7,7 @@
             nested werden auch vorher mit.pop entfernt und im nachgang mit .set wieder hinzugefügt
         </p>
     </div>
-    
+
     <div>
         <h3>Tipp2</h3>
         <h3>Model Serializer</h3>
@@ -48,18 +48,18 @@
         <h3>APIViews einfacher</h3>
         <p>z.B. Mixins, Doku importieren und für jedes view Klasse machen<br>
             class SellerView(mixins.ListModelMixin,
-                  mixins.CreateModelMixin,
-                  generics.GenericAPIView):
-    
-    queryset = Seller.objects.all()
-    serializer_class = SellersSerializer
+            mixins.CreateModelMixin,
+            generics.GenericAPIView):
+
+            queryset = Seller.objects.all()
+            serializer_class = SellersSerializer
 
 
-    def get(self, request, *args, **kwargs):
-        return self.list(request, *args, **kwargs)
+            def get(self, request, *args, **kwargs):
+            return self.list(request, *args, **kwargs)
 
-    def post(self, request, *args, **kwargs):
-        return self.create(request, *args, **kwargs)
+            def post(self, request, *args, **kwargs):
+            return self.create(request, *args, **kwargs)
         </p>
     </div>
 
@@ -68,18 +68,20 @@
         <h3>Beispiel für modifizierte ListView</h3>
         <p>class SellerOfMarketList(generics.ListCreateAPIView):
             serializer_class = SellersSerializer
-        
+
             def get_queryset(self):
-                pk = self.kwargs.get('pk')
-                market = Market.objects.get(pk=pk)
-                return market.sellers.all()
+            pk = self.kwargs.get('pk')
+            market = Market.objects.get(pk=pk)
+            return market.sellers.all()
         </p>
     </div>
 
     <div>
         <h3>Tipp8</h3>
-        <h3></h3>
-        <p>
+        <h3>Django 5.2</h3>
+        <p>models.CompositePrimaryKey("version", "name")<br>
+            Hiermit kann ich einen int und einen str als pk weiter geben, z.B. BusinessUser und die id<br>
+            Kann zum sortieren einfacher sein, eine View statt 2
         </p>
     </div>
 
