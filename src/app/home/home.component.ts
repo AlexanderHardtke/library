@@ -55,5 +55,10 @@ export class HomeComponent {
       useCase: "Testing",
       url: "/TESTING",
     },
+    {
+      name: "Command prompt",
+      useCase: "CMD",
+      url: "/CMD",
+    },
   ]
 }
