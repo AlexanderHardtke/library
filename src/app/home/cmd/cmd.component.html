@@ -31,6 +31,7 @@
         <h3>Tipp 4</h3>
         <h3>basic linux</h3>
         <p>sudo touch script.py (erstellt leere datei)<br>
+            rm -rf script.py (löscht datei)<br>
             less script.py (less ist zum betrachten von Dateien Q zum herausgehen)<br>
             nano script.py (nano ist bearbeiten strg X raus) STRG O zum speichern<br>
             ./ zum ausführen von Dateien<br>
@@ -62,12 +63,43 @@
             angezeigt)<br>
             sudo lsof -u alucard (list of all files)<br>
             sudo lsof -u alucard | more (in Tabellenstruktur)<br>
-            sudo kill (prozessid)
+            sudo kill (prozessid)<br>
+            sed 's/Linux/Unix/g' readme.txt (ändere alle Linus in Unix um in readme(temporär))<br>
+            außer vorher sudo chmod 777 readme.txt<br>
+            sed -i 's/Linux/Unix/g' readme.txt<br>
+            sed --help für infos über die Funktion(/? oder -help auch möglich)
         </p>
     </div>
 
     <div>
         <h3>Tipp 7</h3>
+        <h3>awk (formatierung)</h3>
+        <p>cat colums.txt | awk 'geschweifte(print $1)' (erste Zeile von Tabelle)<br>
+            cat colums.txt | awk 'print $NF'(NF = das allerletzte in der Tabelle)</p>
+    </div>
+
+    <div>
+        <h3>Tipp 8</h3>
+        <h3>Curl zum testen von http requests</h3>
+        <p>curl -i https://google.de<br>(-i steht für interaktiv kann sich also ändern in diesem Fall weiterleiten)<br>
+            curl -d "name=Pikachu&nr=41" https://pokeapi.co/api (post request mit-d)<br>
+            -x PUT/DELETE<br>
+            -u davor ist user:password<br>
+            -o pokemon.json (lädt das ganze herunter als JSON)<br>
+            Beispiel: sudo curl -o google.html https://google.de<br>
+            wget um ausführebahre dateien runterzuladen (.exe)<br>
+            wget -b (für Background, für große Dateien um nicht zu warten)</p>
+    </div>
+
+    <div>
+        <h3>Tipp 9</h3>
+        <h3>Head and Tails</h3>
+        <p>head datai.log (erste 10 Zeilen oder -n3 / -3)<br>
+            tail datai.log (letzte 10 Zeilen -f Beobachtungsmodus)</p>
+    </div>
+
+    <div>
+        <h3>Tipp 10</h3>
         <h3></h3>
         <p></p>
     </div>
