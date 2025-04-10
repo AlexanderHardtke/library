@@ -11,6 +11,7 @@ import { BackEndComponent } from './home/back-end/back-end.component';
 import { BackEndSerializerComponent } from './home/back-end-serializer/back-end-serializer.component';
 import { TestingComponent } from './home/angular/testing/testing.component';
 import { CmdComponent } from './home/cmd/cmd.component';
+import { HostingComponent } from './home/hosting/hosting.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -25,4 +26,5 @@ export const routes: Routes = [
     { path: 'SERIAL', component: BackEndSerializerComponent },
     { path: 'TESTING', component: TestingComponent },
     { path: 'CMD', component: CmdComponent },
+    { path: 'HOSTING', component: HostingComponent },
 ];

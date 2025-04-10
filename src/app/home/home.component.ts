@@ -60,5 +60,10 @@ export class HomeComponent {
       useCase: "CMD",
       url: "/CMD",
     },
+    {
+      name: "Hosting",
+      useCase: "HOSTING",
+      url: "/HOSTING",
+    },
   ]
 }
