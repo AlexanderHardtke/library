@@ -15,15 +15,37 @@
 
     <div>
         <h3>Tipp 2</h3>
-        <h3></h3>
-        <p>
+        <h3>Docker vorbereiten</h3>
+        <p>pip freeze > requirements.txt<br>
+            Neue Datei ohne Endung mit namen "Dockerfile"<br>
+
         </p>
     </div>
 
     <div>
         <h3>Tipp 3</h3>
-        <h3></h3>
-        <p>
+        <h3>Dockerfile Inhalt</h3>
+        <p># syntax=docker/dockerfile:1 -- Bei manchen Systemen muss diese Zeile weg
+
+            FROM python:3
+            
+            
+            
+            WORKDIR /usr/src/app
+            
+            
+            
+            COPY requirements.txt ./
+            
+            RUN /usr/local/bin/python -m pip install --upgrade pip
+            
+            RUN pip install --no-cache-dir -r requirements.txt
+            
+            
+            
+            COPY . . 
+            
+            CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
         </p>
     </div>
 
