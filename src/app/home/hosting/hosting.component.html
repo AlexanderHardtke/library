@@ -28,36 +28,86 @@
         <p># syntax=docker/dockerfile:1 -- Bei manchen Systemen muss diese Zeile weg
 
             FROM python:3
-            
-            
-            
+
+
+
             WORKDIR /usr/src/app
-            
-            
-            
+
+
+
             COPY requirements.txt ./
-            
+
             RUN /usr/local/bin/python -m pip install --upgrade pip
-            
+
             RUN pip install --no-cache-dir -r requirements.txt
-            
-            
-            
-            COPY . . 
-            
+
+
+
+            COPY . .
+            # oder COPY ./django_app
             CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
         </p>
     </div>
 
     <div>
         <h3>Tipp 4</h3>
+        <h3>Docker starten</h3>
+        <p>docker build --tag coderr .<br>
+            docker run --publish 8000:8000 coderr
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 5</h3>
+        <h3>Bash Neustart</h3>
+        <p>Get-Service LxssManager | Restart-Service<br>
+            prozess 'vmmem' im task manager checkena<br>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 6</h3>
+        <h3>Docker resetten</h3>
+        <p>"C:\Program Files\Docker\Docker\DockerCli.exe" -SwitchDaemon<br>
+            Restart-Service LxssManager<br>
+            # UND / ODER<br>
+            $processes = Get-Process "*docker desktop*"<br>
+            if ($processes.Count -gt 0)<br>
+            <br>
+            $processes[0].Kill()<br>
+            $processes[0].WaitForExit()<br>
+            <br>
+            Start-Process "C:\Program Files\Docker\Docker\Docker Desktop.exe"
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 7</h3>
+        <h3>Docer Code mounten</h3>
+        <p>Mit der oben genannten Methode müssen müssen wir jedes mal ein neues Docker-Image erstellen, wenn wir unseren Code ändern. Um unseren Code direkt zu ändern können wir diesen "mounten":<br>
+            docker run --publish 8000:8000 -it -v "$(pwd)/source_dir:/usr/src/app" teachme bash<br>
+            # ODER besser verständlich<br>
+            docker run --publish 8000:8000 -it --mount "type=bind,source=$(pwd)/source_dir,target=/app/target_dir" teachme bash<br>
+            # Windows Beispiel:<br>
+            docker run --publish 8000:8000 -it -v "C:/Dev/teachme:/usr/src/app" teachme bash <br>
+            python3 manage.py runserver 0.0.0.0:8000 # starten<br>
+            Bash schließen<br>
+            Die Bash schließt du mit [Ctrl] + [D]<br>
+            Weitere wichtige Docker-Befehle<br>
+            docker ps # Zeigt alle Docker images an<br>
+            docker exec -it < mycontainer > bash # Öffnet das Terminal eines Docker-Containers
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 8</h3>
         <h3></h3>
         <p>
         </p>
     </div>
 
     <div>
-        <h3>Tipp 5</h3>
+        <h3>Tipp 9</h3>
         <h3></h3>
         <p>
         </p>
