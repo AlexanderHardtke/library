@@ -1,0 +1,190 @@
+<section>
+    <h1>Eingabeauifforderung</h1><button routerLink="" class="backBtn">Back</button>
+
+    <div>
+        <h3>Tipp 1</h3>
+        <h3>Basics</h3>
+        <p>dir = Ordner wechseln (directory)<br>
+            pwd = wo bin ich gerade<br>
+            mkdir = make directory Erstelle Ordner<br>
+            rmdir = remove directory Lösche Ordner<br>
+            rm -r datei/ = löscht ordner MIT Inhalt<br>
+            cp = copy file zielort/<br>
+            mv = move file zielort/<br>
+            shred = überschreibe file mit sinnlosem Grust(wirklich gelöscht)<br>
+            -d tomorrow = erstellt das in der zukunft z.B morgen <br>
+            Tab taste für Intellisense/Autoverfollständigung<br>
+            bash für linux<br>
+            markieren + Enter ist copy rechtsklick ist paste
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 2</h3>
+        <h3>APT-GET</h3>
+        <p>sudo = super user DO<br>
+            sudo apt-get install git-all für Linux<br>
+            sudo apt remove = deinstallieren<br>
+            winget install git für Windows<br>
+            whoami = welcher user<br>
+            passwd = passwort ändern<br>
+            which und where = welcher und wo sind alle<br>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 3</h3>
+        <h3>Script für Linux Beispiel</h3>
+        <p>apt-get install git less nano ftp ssh python3 & pip install django</p>
+    </div>
+
+    <div>
+        <h3>Tipp 4</h3>
+        <h3>basic linux</h3>
+        <p>sudo touch script.py (erstellt leere datei)<br>
+            rm -rf script.py (löscht datei)<br>
+            less script.py (less ist zum betrachten von Dateien Q zum herausgehen)<br>
+            nano script.py (nano ist bearbeiten strg X raus) STRG O zum speichern<br>
+            alternativ vim file und am ende mit esc :wq (write and quít)<br>
+            ./ zum ausführen von Dateien<br>
+            chmod777 gibt allen alle Rechte (Nicht machen außer TEST, chmod +x ist executable)<br>
+            chown = ändert den Besitzer<br>
+            python 3 script.py</p>
+    </div>
+
+    <div>
+        <h3>Tipp 5</h3>
+        <h3>SSH-Verbindung</h3>
+        <p>ifconfig<br>
+            sudo service ssh status<br>
+            sudo apt-get update<br>
+            sudo apt-get remove openssh-server<br>
+            sudo apt-get install openssh-server<br>
+            sudo nano /etc/ssh/sshd_config (password authentifikation and AllowUsers alucard)<br>
+            sudo ssh-keygen -A<br>
+            sudo service ssh start<br>
+            sudo service ssh status<br>
+            sudo service ssh --full-restart
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 6</h3>
+        <h3>Pipe</h3>
+        <p>ifconfig | grep inet (Filtere ifconfig nachinet | = pipe)<br>
+            awk = so ähnlich wie grep, wertet Dateien aus<br>
+            cat datei1 datei2 > newfile.txt (Konkatenieren, Verbinden, bei nur einer Datei wird der Inhalt
+            angezeigt)<br>
+            sudo lsof -u alucard (list of all files)<br>
+            sudo lsof -u alucard | more (in Tabellenstruktur)<br>
+            sudo kill (prozessid)<br>
+            sed 's/Linux/Unix/g' readme.txt (ändere alle Linus in Unix um in readme(temporär))<br>
+            außer vorher sudo chmod 777 readme.txt<br>
+            sed -i 's/Linux/Unix/g' readme.txt<br>
+            sed --help für infos über die Funktion(/? oder -help auch möglich)<br>
+            man = help2 Manual<br>
+            whatis = kurzinfo was ist was
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 7</h3>
+        <h3>awk (formatierung)</h3>
+        <p>cat colums.txt | awk 'geschweifte(print $1)' (erste Zeile von Tabelle)<br>
+            cat colums.txt | awk 'print $NF'(NF = das allerletzte in der Tabelle)<br>
+            cat /etc/resolv.conf = unübersichtlich DNS<br>
+            resolvectl status = besser DNS<br>
+            ping = checkt if website is up<br>
+            tracerout = wo werde ich hingeleitet
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 8</h3>
+        <h3>Curl zum testen von http requests</h3>
+        <p>curl -i https://google.de<br>(-i steht für interaktiv kann sich also ändern in diesem Fall weiterleiten)<br>
+            curl -d "name=Pikachu&nr=41" https://pokeapi.co/api (post request mit-d)<br>
+            -x PUT/DELETE<br>
+            -u davor ist user:password<br>
+            -o pokemon.json (lädt das ganze herunter als JSON)<br>
+            Beispiel: sudo curl -o google.html https://google.de<br>
+            wget um ausführebahre dateien runterzuladen (.exe)<br>
+            wget -b (für Background, für große Dateien um nicht zu warten)</p>
+    </div>
+
+    <div>
+        <h3>Tipp 9</h3>
+        <h3>Head and Tails</h3>
+        <p>head datai.log (erste 10 Zeilen oder -n3 / -3)<br>
+            tail datai.log (letzte 10 Zeilen -f Beobachtungsmodus)<br>
+            cmp = compare wo<br>
+            diff = wo genau<br>
+            cat datei | sort = Sortiere nach Alphabet<br>
+            sudo find / -name "kekse" = findet die Kekse<br>
+        </p>
+
+    </div>
+
+    <div>
+        <h3>Tipp 10</h3>
+        <h3>Well known port number 0 - 1023</h3>
+        <p>Registered Ports 1024 - 49151<br>
+            Dynamic Ports 49152 - 65535<br>
+            FTP Data 20<br>
+            FTP Control 21<br>
+            SSH 21<br>
+            SMTP 25<br>
+            DNS 53<br>
+            HTTP 80<br>
+            POP3<br>
+            HTTPS 443<br>
+            netstat -n oder -tulpn = mein Netzwerk</p>
+    </div>
+
+    <div>
+        <h3>Tipp 11</h3>
+        <h3>mit ssh auf Linux-server verbinden</h3>
+        <p>ssh alucard&#64;92.116.228.20 -p22<br>
+            echo "1+2+3" | bc = rechnet aus<br>
+            free = wie viel GB ist frei<br>
+            df -H wo ist wie viel belegt<br>
+            ps -aux = welche prozesse laufen<br>
+            top or htop = die Prozesse die das meiste fressen<br>
+            ps -aux | grep killfile kill -9 id<br>
+            pkill namefile = stoppt prozess mit namen<br>
+            history = alle Befehle
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 12</h3>
+        <h3>Bios für Linux</h3>
+        <p>mc<br>
+            andere grafische Oberfläche ist Webmin</p>
+    </div>
+
+    <div>
+        <h3>Tipp 13</h3>
+        <h3>alias</h3>
+        <p>alias logs='cd /var/log/da-slackbot'<br>
+            alias li= 'ls -la'<br>
+            um einfachere Befehle für dich zu definieren</p>
+    </div>
+
+    <div>
+        <h3>Tipp 14</h3>
+        <h3>logrotate</h3>
+        <p>installieren um Server nicht zu voll/langsam mit logs zu machen</p>
+    </div>
+
+    <div>
+        <h3>Tipp 15</h3>
+        <h3>Crontabs</h3>
+        <p>Scripte die Mehrfach ausgeführt werden alle x Stunden<br>
+            https://crontab-generator.org/<br>
+            crontab -t # alle anzeigen<br>
+            crontab -e # bearbeiten
+        </p>
+    </div>
+
+</section>

@@ -1,0 +1,19 @@
+section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+div {
+    background-color:darkmagenta;
+    height: 150px;
+    width: 150px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+}

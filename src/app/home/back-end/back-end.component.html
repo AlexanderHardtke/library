@@ -1,0 +1,206 @@
+<section>
+    <h1>Backend Infos</h1><button routerLink="" class="backBtn">Back</button>
+
+    <div>
+        <h3>Tipp 1</h3>
+        <h3>Content-type</h3>
+        <p>text/html; charset=UTF-8<br>
+            multipart/Form-data; boundary=something<br>
+            application/json<br>
+            application/xml</p>
+    </div>
+
+
+    <div>
+        <h3>Tipp 2</h3>
+        <h3>PIP-Befehle</h3>
+        <p>pip install modulname<br>
+            pip uninstall modulname<br>
+            pip freeze > requirements.txt<br>
+            pip install -r requirements.txt</p>
+    </div>
+
+
+    <div>
+        <h3>Tipp 3</h3>
+        <h3>Django</h3>
+        <p>python -m venv env<br>
+            "env\Scripts\activate"
+            pip freeze<br>
+            python -m pip install Django<br>
+            django-admin startproject your_project .<br>
+            python manage.py startapp your_app
+        </p>
+    </div>
+
+
+    <div>
+        <h3>Tipp 4</h3>
+        <h3>VIP commands</h3>
+        <p>"env/Scripts/activate"<br>
+            pip freeze > requirements.txt<br>
+            python manage.py runserver</p>
+    </div>
+
+
+    <div>
+        <h3>Tipp 5</h3>
+        <h3>Objekte in Datenbank erzeugen</h3>
+        <p>Klasse Model.py erstellen<br>
+            python manage.py makemigrations<br>
+            python manage.py migrate<br>
+            python manage.py shell(interaktive Konsole)<br>
+            from sales.models import Customer(Name des Programms importiert Datenbank)<br>
+            first_customer = Customer(first_name="Mandy", last_name="Musterfrau")<br>
+            first_customer.clean_fields() #Validierung<br>
+            first_customer.save()<br>
+            alternativ<br>
+            Customer.objects.create(first_name="Rudolf", last_name="Mustermann")<br>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 6</h3>
+        <h3>Objekte read()</h3>
+        <p>
+            python manage.py shell(interaktive Konsole)<br>
+            Customer.objects.all()<br>
+            Customer.objects.get(first_name="Mandy")<br>
+            # geht nur wenn es nur einen eindeutigen gibt = 2 gleiche Vornamen ist Fehler, besser mit ID</p>
+    </div>
+
+    <div>
+        <h3>Tipp 7</h3>
+        <h3>Objekte update and delete</h3>
+        <p>all_customer = Customer.objects.all()<br>
+            all_customer[1].delete()<br>
+            #löscht den Kunden<br>
+            all_customer[0].last_name<br>
+            single_customer = all_customer[0]<br>
+            single_customer.last_name = "Zwergerich"<br>
+            single_customer.save()
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 8</h3>
+        <h3>Field References null</h3>
+        <p>Field kann ein default haben<br>
+            null bedeutet es ist nichts drin, bei vielen Fields nicht möglich<br>
+            z.B. CharField und Texfeldern immer ''<br>
+            blank=True, null=True damit kann der Wert leer sein, wenn Wert noch nicht bekannt</p>
+    </div>
+
+    <div>
+        <h3>Tipp 9</h3>
+        <h3>Relationships</h3>
+        <p>one-to-many ein Hersteller, mehrere Autos<br>
+            many-to-many ein produkt kann mehrere orders beinhalten und auch auf mehreren Orders sein<br>
+            many-to-many through um 3es Element mit 2 zu verbinden z.B. Produkttyp<br>
+            one-to-one Order mit Bill
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 10</h3>
+        <h3>str überschreiben</h3>
+        <pre><code [innerHTML]="codeSnippetpy"></code></pre>
+    </div>
+
+    <div>
+        <h3>Tipp11</h3>
+        <h3>Admin einrichten</h3>
+        <p>python manage.py createsuperuser</p>
+    </div>
+
+    <div>
+        <h3>Tipp12</h3>
+        <h3>Querys</h3>
+        <p>Bill.objects.filter(is_paid=True)<br>
+            Bill.objects.filter(total_amount__lt=105)<br>
+            lte = lower then equal, Filterschreibweise<br>
+            __exact = macht effektiv nichts</p>
+    </div>
+
+    <div>
+        <h3>Tipp13</h3>
+        <h3>SQL anzeigen lassen</h3>
+        <p>str(Customer.objects.filter(first_name__exact="John").query)<br>
+            Bill.objects.all()[:2] = die ersten 2<br>
+            Bill.objects.all()[2:3].get() = Bill.objects.all()[2]</p>
+    </div>
+
+    <div>
+        <h3>Tipp14</h3>
+        <h3>or filter</h3>
+        <p>Bill.objects.filter(is_paid=True, total_amount__gte="100")<br>
+            from django.db.models import Q<br>
+            Bill.objects.filter(Q(is_paid=True) & Q(total_amount__gte="100")) = genau das gleiche
+            Bill.objects.filter(Q(is_paid=True) | Q(total_amount__gte="100")) = jetzt geht oder
+            Bill.objects.exclude(Q(is_paid=True) Q(total_amount__gte="100")) = genau Gegenstück zu filter<br>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp15</h3>
+        <h3>Verschachtelung und order_by</h3>
+        <p>Customer.objects.all()[2].order_set.all()<br>
+            Customer.objects.all()[2].order_set.filter(bill__total_amount__lt=150) = verschachtelte Verbindung<br>
+            Customer.objects.order_by("-first_name") = Ordnet die Liste nach Vornamen z-a<br>
+            Order.objects.order_by("bill__total_amount")
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp16</h3>
+        <h3>aggregations = Berechnungen</h3>
+        <p>from django.db.models import Avg<br>
+            Bill.objects.aggregate(Avg("total_amount", default=0))<br>
+            Order.objects.aggregate(Avg("bill__total_amount", default=0))<br>
+            from django.db.models import Count<br>
+            orders = Customer.objects.annotate(num_orders=Count("order"))<br>
+            orders[0].num_orders = Anzahl der Orders für den Kunden 0
+        </p>
+    </div>
+
+
+    <div>
+        <h3>Tipp17</h3>
+        <h3>Optimierung</h3>
+        <p>Bei Abfragen möglichst nur eine machen und alle Daten in eine query schieben<br>
+            Gutes Beispiel: entry = Entry.objects.her(id=1)<br>
+            entry.blog #Blog Object received<br>
+            entry.blog #cached version<br>
+            schlechtes: entry.authors.all()<br>
+            entry.authors.all() #query performed again
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp18</h3>
+        <h3>permissions.py</h3>
+        <p>um beschränkungen für bestimmte User und superuser zu definieren<br>
+            Oder auch nur bestimmte Felder einzublenden z.B für Gäste
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp19</h3>
+        <h3>tokenAuthentication</h3>
+        <pre><code [innerHTML]="codeSnippet"></code></pre>
+
+    </div>
+
+    <div>
+        <h3>Tipp20</h3>
+        <h3>Live-Server-Reload</h3>
+        <p>Die Lösung für die Live Server Erweiterung in VS Code ist, in die settings.json von VS Code zu gehen und Folgendes hinzuzufügen:
+
+            "liveServer.settings.fullReload": false,
+            "liveServer.settings.ignoreFiles": ["**/db.json"]
+            
+            Das bewirkt, dass Live Server db.json ignoriert und kein unerwünschtes Reload mehr auslöst.
+        </p>
+    </div>
+
+</section>

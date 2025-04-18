@@ -1,0 +1,125 @@
+<section>
+
+    <h1>Backend Serializers</h1><button routerLink="" class="backBtn">Back</button>
+
+    <div>
+        <h3>Tipp1</h3>
+        <h3>nested serializers</h3>
+        <p>selbst gebaute serializer in many to many field einbauen<br>
+            markets = MarketSerializer(many=True, read_only=True)<br>
+            nested werden auch vorher mit.pop entfernt und im nachgang mit .set wieder hinzugefügt
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp2</h3>
+        <h3>Model Serializer</h3>
+        <p>es wird automatisch ein set fields generiert basierend auf dem Model<br>
+            automatische validatoren und includes update() und create()<br>
+            Extrem zeitsparend, Nachteil: geht auch nicht ohne Model und für komplexe Lösungen
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp3</h3>
+        <h3>Hyperlinkrelatedfield</h3>
+        <p>einen view_name='seller_single' geben<br>
+            AssertionError: Add `context='request': request`<br>
+            hier den context hinter die Felder in der View dem serlializer übergeben
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp4</h3>
+        <h3>inheritance</h3>
+        <p>Serializers können Eigenschaften vererben und erweitert werden<br>
+            Wenn z.B in der Single View mehr Infos sein sollen als in der multiple view
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp5</h3>
+        <h3>Base und List serializer</h3>
+        <p>BaseSerilaizer ist für sehr basic dinge da mir Varianten in der Doku<br>
+            many=True für den List Serializer<br>
+            Edge-Cases
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp6</h3>
+        <h3>APIViews einfacher</h3>
+        <p>z.B. Mixins, Doku importieren und für jedes view Klasse machen<br>
+            class SellerView(mixins.ListModelMixin,
+            mixins.CreateModelMixin,
+            generics.GenericAPIView):
+
+            queryset = Seller.objects.all()
+            serializer_class = SellersSerializer
+
+
+            def get(self, request, *args, **kwargs):
+            return self.list(request, *args, **kwargs)
+
+            def post(self, request, *args, **kwargs):
+            return self.create(request, *args, **kwargs)
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp7</h3>
+        <h3>Beispiel für modifizierte ListView</h3>
+        <p>class SellerOfMarketList(generics.ListCreateAPIView):
+            serializer_class = SellersSerializer
+
+            def get_queryset(self):
+            pk = self.kwargs.get('pk')
+            market = Market.objects.get(pk=pk)
+            return market.sellers.all()
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp8</h3>
+        <h3>Django 5.2</h3>
+        <p>models.CompositePrimaryKey("version", "name")<br>
+            Hiermit kann ich einen int und einen str als pk weiter geben, z.B. BusinessUser und die id<br>
+            Kann zum sortieren einfacher sein, eine View statt 2
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp9</h3>
+        <h3></h3>
+        <p>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp10</h3>
+        <h3></h3>
+        <p>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp11</h3>
+        <h3></h3>
+        <p>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tip12</h3>
+        <h3></h3>
+        <p>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp6</h3>
+        <h3></h3>
+        <p>
+        </p>
+    </div>
+</section>

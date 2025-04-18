@@ -1,0 +1,107 @@
+<section>
+    <h1>Testing</h1><button routerLink="" class="backBtn">Back</button>
+
+    <div class="tipp-1">
+        <h3>Tipp 1</h3>
+        <h3>Grundlagen Softwaretests</h3>
+        <p>Tests eher in der ...App auslagern in Ordner tests der direkt in der app liegt<br>
+            das ganze muss gestartet werden mit einer __init__.py Datei<br>
+            wenn ordner existiert darf keine tests.py in der app existieren
+        </p>
+    </div>
+    
+    <div>
+        <h3>Tipp 2</h3>
+        <h3>TDD</h3>
+        <p>Test Driven Developement<br>
+            Die Tests sind so aufgebaut das sie erst die Models abdecken. Entwicklertests(ModelTests)<br>
+            Erst Tests schreiben, dann das Backend
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 3</h3>
+        <h3>Allgemeine Test Typen</h3>
+        <p>Komponententests, Integrationstests, Systemtest, Abnahmetest<br>
+            Funktionale und nicht funktionale Tests (z.B. Benutzeraktzepptanz)<br>
+            strukturbezogener Test, änderungsbezogener Test 
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 4</h3>
+        <h3>Trottle</h3>
+        <p>Um die Anzahl der Aufrufe pro Tag/Stunde zu begrenzen -> DDOS Attack
+            Throttling ist in etwa wie permissions nur halt anzahlbegrenzt<br>
+            In der View.py die throttle class überschreiben, vorher in throttling.py definieren
+            Allgemein öfters in den importierten Modulen nachlesen wie sie funktionieren.
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 5</h3>
+        <h3>Scooping in settings.py</h3>
+        <p>from rest_framework.throttling import UserRateThrottle
+
+            class Questionthrottle(UserRateThrottle):
+                scope = 'question'
+            
+                def allow_request(self, request, view):
+                    if request.method == "GET":# Beispiel um Get immer zu erlauben
+                        return True
+                    
+                    new_scope = 'question-' + request.method.lower() #teilweise im Framework nachschauen um Lösung zu kreiren
+                    if new_scope in self.THROTTLE_RATES:
+                        self.scope = new_scope
+                        self.rate = self.get_rate()
+                        self.num_requests, self.duration = self.parse_rate(self.rate)
+                    
+                    return super().allow_request(request, view)
+
+            Andere Methode in view Modul08, ist seperat für eine eionzelne view vs der obere Fall für komplette API einsetzbar
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 6</h3>
+        <h3>Filtern mit queryset</h3>
+        <p>am ende der URL ?content=Django&author=bob<br>
+            mit Postman in die Params den key z.B. content und den Value Django
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 7</h3>
+        <h3>filter search</h3>
+        <p>implementieren um auch nur Bruchstücke oder keywords zu suchen<br>
+            prefixes vor dem search um zu spezifizieren
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 8</h3>
+        <h3>ordering -> sortierung</h3>
+        <p>wird genau so implementiert wie filter search<br>
+            kann mit - umgedreht werden oder mit anderen values z.B. in Postman keyword ordering geändert werden
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 8</h3>
+        <h3>pagination</h3>
+        <p>implementieren um größere Daten Mengen in mehreren Seiten abzubilden<br>
+            Postmann = key page und value mit der nummer der Seite<br>
+            page-site lässt sich auch im backend ändern<br>
+            Alternativ auch als default setzen möglich in der setting.py
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 9</h3>
+        <h3>pagination limit offset</h3>
+        <p>Andere Methode aber mit einem Limit und einem offset<br>
+            User kann hier einfacher sagen ab wann und wie viel anzeigen
+        </p>
+    </div>
+
+</section> 

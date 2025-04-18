@@ -1,0 +1,222 @@
+<section>
+    <h1>Eingabeaufforderung</h1><button routerLink="" class="backBtn">Back</button>
+
+    <div>
+        <h3>Tipp 1</h3>
+        <h3>Docker</h3>
+        <p>Containerization<br>
+            alles darin installiert im Docker auf den Server packen<br>
+            zusammen mit AWS in der Cloud (Serverless)<br>
+            Docker, Server selbst mieten und maintainen(Versionen müssen alle gleich sein)<br>
+            Kubernetescluster (teuer und schwer aufzusetzen dafür skalierbar)<br>
+            Serverlessdeployment Google App Engine oder AWS (keine Serverkonfig aber an Anbieter gebunden)
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 2</h3>
+        <h3>Docker vorbereiten</h3>
+        <p>pip freeze > requirements.txt<br>
+            Neue Datei ohne Endung mit namen "Dockerfile"<br>
+
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 3</h3>
+        <h3>Dockerfile Inhalt</h3>
+        <p># syntax=docker/dockerfile:1 -- Bei manchen Systemen muss diese Zeile weg
+
+            FROM python:3
+
+
+
+            WORKDIR /usr/src/app
+
+
+
+            COPY requirements.txt ./
+
+            RUN /usr/local/bin/python -m pip install --upgrade pip
+
+            RUN pip install --no-cache-dir -r requirements.txt
+
+
+
+            COPY . .
+            # oder COPY ./django_app
+            CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 4</h3>
+        <h3>Docker starten</h3>
+        <p>docker build --tag coderr .<br>
+            docker run --publish 8000:8000 coderr<br>
+            
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 5</h3>
+        <h3>Bash Neustart</h3>
+        <p>Get-Service LxssManager | Restart-Service<br>
+            prozess 'vmmem' im task manager checkena<br>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 6</h3>
+        <h3>Docker resetten</h3>
+        <p>"C:\Program Files\Docker\Docker\DockerCli.exe" -SwitchDaemon<br>
+            Restart-Service LxssManager<br>
+            # UND / ODER<br>
+            $processes = Get-Process "*docker desktop*"<br>
+            if ($processes.Count -gt 0)<br>
+            <br>
+            $processes[0].Kill()<br>
+            $processes[0].WaitForExit()<br>
+            <br>
+            Start-Process "C:\Program Files\Docker\Docker\Docker Desktop.exe"
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 7</h3>
+        <h3>Docer Code mounten</h3>
+        <p>Mit der oben genannten Methode müssen müssen wir jedes mal ein neues Docker-Image erstellen, wenn wir unseren
+            Code ändern. Um unseren Code direkt zu ändern können wir diesen "mounten":<br>
+            docker run --publish 8000:8000 -it -v "$(pwd)/source_dir:/usr/src/app" teachme bash<br>
+            # ODER besser verständlich<br>
+            docker run --publish 8000:8000 -it --mount "type=bind,source=$(pwd)/source_dir,target=/app/target_dir"
+            teachme bash<br>
+            # Windows Beispiel:<br>
+            docker run --publish 8000:8000 -it -v "C:/Dev/teachme:/usr/src/app" teachme bash <br>
+            python3 manage.py runserver 0.0.0.0:8000 # starten<br>
+            Bash schließen<br>
+            Die Bash schließt du mit [Ctrl] + [D]<br>
+            Weitere wichtige Docker-Befehle<br>
+            docker ps # Zeigt alle Docker images an<br>
+            docker exec -it < mycontainer> bash # Öffnet das Terminal eines Docker-Containers
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 8</h3>
+        <h3>Server bei Google einrichten</h3>
+        <p>sudo apt-get update<br>
+            siehe VM-einrichten<br>
+            sudo apt-get update<br>
+            sudo apt-get upgrade<br>
+            cd /home/junus91<br>
+            ssh-keygen -t rsa -b 4096 -C "your_email&#64;example.com"<br>
+            git config --global user.name "Junus Ergin (Server)"<br>
+            git config --global user.email "meinemail&#64;gmail.com"<br>
+            cat .ssh/id_rsa.pub<br>
+            # SSH Key bei Github einfügen mkdir projects<br>
+            cd projects<br>
+            git clone ...<br>
+            cd Django_Chatapp<br>
+            apt install python3.8-venv<br>
+            python3 -m venv env<br>
+            source env/bin/activate<br>
+            pip install -r requirements.txt<br>
+            apt install net-tools<br>
+            ifconfig
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 9</h3>
+        <h3>Apache vs nginx</h3>
+        <p>nginx = perfomant, setzt auf async, kein dynamisches laden<br>
+            apache = flexibel, Nachteil bei großen Sites<br>
+            sogar kombinierbar sodass der nginx server das statische erledigt und alle dynamischen Aufgaben weiterleitet
+            an apache
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 10</h3>
+        <h3>sites enabled vs available</h3>
+        <p>sites-enabled sind aktivierte sites nach draußen und available sind nur auf dem server(aktiv und inaktiv)<br>
+            sudo nano/etc/nginx/sites-enabled/default<br>
+            cd /etc/nginx/sites-enabled/<br>
+            sudo ln -s /etc/nginx/sites-available/Beispiel-App<br>
+            vielleicht<br>
+            sudo ln -s /etc/nginx/sites-available/Django-ChatApp /etc/nginx/sites-enabled/
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 11</h3>
+        <h3>DNS Cache löschen</h3>
+        <p>ipconfig /flushdns<br>
+            chrome://net-internals/#dns (um aktuelle IP Adresse auf DNS Cache zu laden)<br>
+            gunicorn coderr_backend.wsgi:application --bind 127.0.0.1:8000 --workers 3
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 12</h3>
+        <h3>gunicorn im hintergrund</h3>
+        <p>sudo apt-get install suvervisor<br>
+            command=/home/g5yl3kz/projects/Coderr/env/bin/gunicorn --workers 3 --bind unix:myproject.sock
+            cfehome.wsgi:application<br>
+            in settings.py allowed hosts ändern<br>
+            static_root = os.path.join(BASE_DIR, "static")
+            sudo supervisorctl restart coderr_gunicorn<br>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 13</h3>
+        <h3>CSS Dateien laden</h3>
+        <p>sudo nano urls.py<br>
+            urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)<br>
+            urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)<br>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 14</h3>
+        <h3>letsencrypt</h3>
+        <p>fordert ein Zertifikat mit Anleitung an um SSL Verschlüsselt zu sein.<br>
+            Geht nicht auf IP-Adressen
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 15</h3>
+        <h3>Force HTTPS</h3>
+        <p># sudo nano /etc/nginx/sites-enabled/default<br>
+            #Nginx Config<br>
+            server <br>
+            listen 80;<br>
+            server_name deine.domain.com;<br>
+            rewrite ^ https://$server_name$request_uri? permanent;<br>
+            <br>
+            server <br>
+            listen 443 default_server ssl;<br>
+            server_name 127.0.0.1;<br>
+            ssl_certificate /etc/letsencrypt/live/deine.domain.com/fullchain.pem;<br>
+            ssl_certificate_key /etc/letsencrypt/live/deine.domain.com/privkey.pem;<br>
+            location / <br>
+            include proxy_params;<br>
+            proxy_pass http://127.0.0.1:5000;<br>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 16</h3>
+        <h3>automatic deployment</h3>
+        <p>Ip-Adresse + SSH-Key public<br>
+            ssh username&#64;ip-adresse <br>
+            ssh alucard&#64;34.159.122.31 direkt auf google server einloggen<br>
+            ssh alucard&#64;34.159.122.31 "cd da-slackbot && git pull"
+        </p>
+    </div>
+
+
+</section>
