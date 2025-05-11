@@ -54,7 +54,7 @@
         <h3>Docker starten</h3>
         <p>docker build --tag coderr .<br>
             docker run --publish 8000:8000 coderr<br>
-            
+
         </p>
     </div>
 
@@ -225,5 +225,24 @@
         </p>
     </div>
 
+    <div>
+        <h3>Tipp 18</h3>
+        <h3>Docker mit django erstellen</h3>
+        <p>docker compose up --build<br>
+            docker compose up<br>
+            docker exec videoflix_backend python manage.py makemigrations
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 19</h3>
+        <h3>Docker Befehle</h3>
+        <p>um in die commando zeile des containers zu kommen<br>
+            docker exec -ti postgres_db psql -U alucard -d videoflix<br>
+            /dt<br>
+            dev_database=# select * from core_actor<br>
+            docker exec -ti videoflix python manage.py shell
+        </p>
+    </div>
 
 </section>
