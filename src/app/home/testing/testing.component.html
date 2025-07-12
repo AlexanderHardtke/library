@@ -9,7 +9,7 @@
             wenn ordner existiert darf keine tests.py in der app existieren
         </p>
     </div>
-    
+
     <div>
         <h3>Tipp 2</h3>
         <h3>TDD</h3>
@@ -24,7 +24,7 @@
         <h3>Allgemeine Test Typen</h3>
         <p>Komponententests, Integrationstests, Systemtest, Abnahmetest<br>
             Funktionale und nicht funktionale Tests (z.B. Benutzeraktzepptanz)<br>
-            strukturbezogener Test, änderungsbezogener Test 
+            strukturbezogener Test, änderungsbezogener Test
         </p>
     </div>
 
@@ -44,21 +44,22 @@
         <p>from rest_framework.throttling import UserRateThrottle
 
             class Questionthrottle(UserRateThrottle):
-                scope = 'question'
-            
-                def allow_request(self, request, view):
-                    if request.method == "GET":# Beispiel um Get immer zu erlauben
-                        return True
-                    
-                    new_scope = 'question-' + request.method.lower() #teilweise im Framework nachschauen um Lösung zu kreiren
-                    if new_scope in self.THROTTLE_RATES:
-                        self.scope = new_scope
-                        self.rate = self.get_rate()
-                        self.num_requests, self.duration = self.parse_rate(self.rate)
-                    
-                    return super().allow_request(request, view)
+            scope = 'question'
 
-            Andere Methode in view Modul08, ist seperat für eine eionzelne view vs der obere Fall für komplette API einsetzbar
+            def allow_request(self, request, view):
+            if request.method == "GET":# Beispiel um Get immer zu erlauben
+            return True
+
+            new_scope = 'question-' + request.method.lower() #teilweise im Framework nachschauen um Lösung zu kreiren
+            if new_scope in self.THROTTLE_RATES:
+            self.scope = new_scope
+            self.rate = self.get_rate()
+            self.num_requests, self.duration = self.parse_rate(self.rate)
+
+            return super().allow_request(request, view)
+
+            Andere Methode in view Modul08, ist seperat für eine eionzelne view vs der obere Fall für komplette API
+            einsetzbar
         </p>
     </div>
 
@@ -104,4 +105,26 @@
         </p>
     </div>
 
-</section> 
+    <div>
+        <h3>Tipp 10</h3>
+        <h3>pytest in docker mit coverage</h3>
+        <p>docker exec videoflix_backend coverage erase<br>
+            docker exec -ti videoflix_backend python manage.py shell<br>
+            docker exec videoflix_backend python manage.py test<br>
+            docker exec videoflix_backend coverage report<br>
+            docker exec videoflix_backend coverage html<br>
+            docker cp videoflix_backend:/app/htmlcov ./htmlcov
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 11</h3>
+        <h3>Jasmin/Karma tests</h3>
+        <p>it('description', () => ...) ist wie def testxyz beschreibt den Test<br>
+            expect(...).toBe(...) ist wie assertequal oder assertTrue<br>
+            fixture ist wie client und response (Test-DOM)<br>
+            component die instanzierte Klasse der Komponente
+        </p>
+    </div>
+
+</section>
