@@ -13,6 +13,7 @@ import { CmdComponent } from './home/cmd/cmd.component';
 import { HostingComponent } from './home/hosting/hosting.component';
 import { RaspberrypiComponent } from './home/raspberrypi/raspberrypi.component';
 import { TestingComponent } from './home/testing/testing.component';
+import { SQLComponent } from './home/sql/sql.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -28,5 +29,6 @@ export const routes: Routes = [
     { path: 'TESTING', component: TestingComponent },
     { path: 'CMD', component: CmdComponent },
     { path: 'HOSTING', component: HostingComponent },
-    { path: 'RASP', component: RaspberrypiComponent}
+    { path: 'RASP', component: RaspberrypiComponent},
+    { path: 'SQL', component: SQLComponent}
 ];
