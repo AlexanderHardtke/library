@@ -1,7 +1,7 @@
 <section>
     <h1>SQL</h1><button routerLink="" class="backBtn">Back</button>
 
-    <div class="tipp-1">
+    <div>
         <h3>Tipp 1</h3>
         <h3>Grundlagen SQL Infos</h3>
         <p>in SQL: SELECT*FROM employees<br>
@@ -10,5 +10,17 @@
             in Django einfacher zu schreiben als reines SQL
         </p>
     </div>
+
+     <div>
+        <h3>Tipp 2</h3>
+        <h3>SQL Injection</h3>
+        <p>bei nichtabgefragten Dingen vom Frontend<br>
+            SELECT*FROM employees<br>
+            WHERE Alter &lt; 30 AND SELECT*FROM password<br>
+            employees.filter(alter__lte=AGE)<br>
+            Bei Abfrage mit Django gibt es bei SQL Injection einen Fehler da das als Zahl gechecked wird
+        </p>
+    </div>
+
 
 </section>
