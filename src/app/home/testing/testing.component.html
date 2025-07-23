@@ -108,7 +108,8 @@
     <div>
         <h3>Tipp 10</h3>
         <h3>pytest in docker mit coverage</h3>
-        <p>docker exec videoflix_backend coverage erase<br>
+        <p>ng test --code-coverage<br>
+            docker exec videoflix_backend coverage erase<br>
             docker exec -ti videoflix_backend python manage.py shell<br>
             docker exec videoflix_backend python manage.py test<br>
             docker exec videoflix_backend coverage report<br>
@@ -124,6 +125,37 @@
             expect(...).toBe(...) ist wie assertequal oder assertTrue<br>
             fixture ist wie client und response (Test-DOM)<br>
             component die instanzierte Klasse der Komponente
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 12</h3>
+        <h3>Komponente instanziieren (Setup)</h3>
+        <p>fixture = TestBed.createComponent(FooterComponent);<br>
+            component = fixture.componentInstance;<br>
+            fixture.detectChanges(); // wichtig!
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 13</h3>
+        <h3>Daten manipulieren (wie Zustand simulieren)</h3>
+        <p>component.currentUrl = '/info';<br>
+            fixture.detectChanges(); // nach jeder Änderung nötig!
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 14</h3>
+        <h3>DOM abfragen (was wurde gerendert?)</h3>
+        <p>const section = fixture.debugElement.query(By.css('section'));<br>
+        </p>
+    </div>
+
+        <div>
+        <h3>Tipp 15</h3>
+        <h3>Erwartung formulieren</h3>
+        <p>expect(section.nativeElement.classList).toContain('d-none');<br>
         </p>
     </div>
 

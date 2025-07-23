@@ -52,11 +52,15 @@
     <div>
         <h3>Tipp 4</h3>
         <h3>Docker starten</h3>
-        <p>docker compose up --build<br>
+        <p>docker compose up --build -d (-d for background = detached mode)<br>
             docker run --publish 8000:8000 coderr<br>
             docker exec videoflix_backend python manage.py makemigrations<br>
             docker exec -ti videoflix_backend python manage.py shell<br>
-            docker exec -it videoflix_backend python manage.py createsuperuser
+            docker exec -it videoflix_backend python manage.py createsuperuser<br>
+            docker-compose down -v<br>
+            docker-compose down --rmi all -v<br>
+            sudo docker-compose restart<br>
+
         </p>
     </div>
 
@@ -243,7 +247,8 @@
             docker exec -ti postgres_db psql -U alucard -d videoflix<br>
             /dt<br>
             dev_database=# select * from core_actor<br>
-            docker exec -ti videoflix python manage.py shell
+            docker exec -ti videoflix python manage.py shell<br>
+            docker-compose down -v && docker-compose build --no-cache && docker-compose up
         </p>
     </div>
 
