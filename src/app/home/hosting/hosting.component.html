@@ -52,9 +52,11 @@
     <div>
         <h3>Tipp 4</h3>
         <h3>Docker starten</h3>
-        <p>docker build --tag coderr .<br>
+        <p>docker compose up --build<br>
             docker run --publish 8000:8000 coderr<br>
-
+            docker exec videoflix_backend python manage.py makemigrations<br>
+            docker exec -ti videoflix_backend python manage.py shell<br>
+            docker exec -it videoflix_backend python manage.py createsuperuser
         </p>
     </div>
 
