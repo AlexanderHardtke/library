@@ -57,18 +57,23 @@ export class HomeComponent {
     },
     {
       name: "Command prompt",
-      useCase: "CMD",
+      useCase: "Command Console",
       url: "/CMD",
     },
     {
       name: "Hosting",
-      useCase: "HOSTING",
+      useCase: "Allgemeine Hosting Tipps",
       url: "/HOSTING",
     },
     {
       name: "RaspberryPi",
-      useCase: "RASP",
+      useCase: "für das hosten auf dem Pi",
       url: "/RASP",
+    },
+    {
+      name: "C#",
+      useCase: "C# Infos",
+      url: "/CSHARP",
     },
   ]
 }

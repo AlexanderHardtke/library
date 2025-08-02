@@ -15,6 +15,7 @@ import { RaspberrypiComponent } from './home/raspberrypi/raspberrypi.component';
 import { TestingComponent } from './home/testing/testing.component';
 import { SQLComponent } from './home/sql/sql.component';
 import { PromptsComponent } from './home/prompts/prompts.component';
+import { CSHarpComponent } from './home/csharp/csharp.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -32,5 +33,6 @@ export const routes: Routes = [
     { path: 'HOSTING', component: HostingComponent },
     { path: 'RASP', component: RaspberrypiComponent},
     { path: 'SQL', component: SQLComponent},
-    { path: 'PROMPT', component: PromptsComponent}
+    { path: 'PROMPT', component: PromptsComponent},
+    { path: 'CSHARP', component: CSHarpComponent}
 ];
