@@ -68,20 +68,58 @@
         <p>string[] namen = new string[] &#123; "Anna", "Bob", "Clara" &#125;;<br>
             var names = new List&lt;string&gt; &#123;"Scott", "Alex"&#125;<br>
             Array hat eine feste ANzahl an Elementen und kann mit anderen Sprachen kommunizieren<br>
-            Liste&#123;T&#125; Daten können sich abändern und ist komfortablere Funktionen
+            für arrays names = [..namen, "Damian"];<br>
+            Liste&lt;T&gt; Daten können sich abändern und ist komfortablere Funktionen<br>
+            List&lt;int&gt; scores = [97, 92, 12, 42] neueste Semantik<br>
+            mit [^1] oder [^2] bekommt man den letzten im Array bzw den vorletzten
         </p>
     </div>
 
     <div>
         <h3>Tipp 8</h3>
-        <h3>foreach</h3>
+        <h3>foreach für listen und arrays</h3>
         <p>foreach (var item in collection)<br>
-            &#123;item.ToUpper()&#125;
+            oder collection[2..4] für 2 und 3 4 ist ausgenommen<br>
+            &#123;
+            <br>
+            item.ToUpper()&#125;<br>
+            Listen können Sort(), IndexOf(),
         </p>
     </div>
 
     <div>
         <h3>Tipp 9</h3>
+        <h3>LINQ Language Integrated Query</h3>
+        <p>bisschen wie SQL<br>
+            Die Frage: IEnumerable&lt;string&gt; scoreQuery =<br>
+            from score in scores //required<br>
+            where score &gt; 80<br>
+            orderby score descending<br>
+            select $"The score is &#123;score&#125; //select or group<br>
+            Die Antwort: foreach(string s in scoreQuery)&#123;<br>
+            Console.WriteLine(s);
+            &#125;
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 10</h3>
+        <h3>Alternativ LINQ with methods</h3>
+        <p>var scoreQuery = scores.Where(s => s > 80)<br>
+            .OrderByDescending(s => s);<br>
+            select is implied, ähnlich wie Python oder JS
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 11</h3>
+        <h3>namespaces and classes</h3>
+        <p>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 12</h3>
         <h3></h3>
         <p>
         </p>
