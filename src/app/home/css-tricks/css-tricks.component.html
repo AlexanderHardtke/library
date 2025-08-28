@@ -1,7 +1,7 @@
 <section>
     <h1>CSS Tricks</h1><button routerLink="" class="backBtn">Back</button>
 
-    <div class="tipp-1">
+    <div>
         <h3>Tipp 1</h3>
         <code>float:left;</code>
         <h3>Alternative zu <code>position:absolute;</code></h3>
@@ -9,7 +9,7 @@
     </div>
 
 
-    <div class="tipp-2">
+    <div>
         <h3>Tipp 2</h3>
         <code>place-content: center;</code>
         <p>Wenn untere Reihe immer zentriert sein soll bei flexbox</p>
@@ -27,7 +27,7 @@
     </div>
 
 
-    <div class="tipp-4">
+    <div>
         <h3>Tipp 4</h3>
         <h3>Riesenbildschirme</h3>
         <p><code>&#64;media screen and (min-width:1921px) and (min-height)</code> Contentbegrenzung bis auf Objekte in
@@ -36,7 +36,7 @@
     </div>
 
 
-    <div class="tipp-5">
+    <div>
         <h3>Tipp 5</h3>
         <code>flex:1;</code>
         <p>lässt ein Element wachsen oder schrumpfen</p>
@@ -45,10 +45,12 @@
     </div>
 
 
-    <div class="tipp-6">
+    <div>
         <h3>Tipp 6</h3>
+        <h3>Fürs Smartphones</h3>
         <code>max-height 100svh;</code>
-        <p>entfernt scrollbalken anstatt height:100%</p>
+        <p>Verwende 100svh damit die Such und Menüleiste berücksichtigt wird oder dvh für dynamic viewport<br>
+            pointer coarse für anklicken mit smarphone</p>
     </div>
 
 
@@ -59,41 +61,29 @@
     </div>
 
 
-    <div class="tipp-8">
+    <div>
         <h3>Tipp 8</h3>
         <h3>Spreche alle devices ohne Maus an > mobiles</h3>
-        <p>{{'@media (pointer: coarse) {}'}}</p>
+        <code>{{'@media (pointer: coarse) {}'}}</code>
     </div>
 
 
-    <div class="tipp-9">
+    <div>
         <h3>Tipp 9</h3>
-        <h3>Fürs navigieren ohne Maus , a:hover-visible</h3>
+        <h3>Fürs navigieren ohne Maus</h3>
+        <code>a:hover-visible</code>
         <p>a:hover,
-            a:focus-visible for people who navigate without mouse</p>
+            a:focus-visible for people who navigate without mouse, or a:focus</p>
     </div>
 
 
-    <div class="tipp-10">
+    <div>
         <h3>Tipp 10</h3>
-        <h3>Fürs Smartphones</h3>
-        <p>Verwende 100svh damit die Such und Menüleiste berücksichtigt wird oder dvh für dynamic viewport<br>
-            pointer coarse für anklicken mit smarphone</p>
-    </div>
-
-
-    <div class="tipp-11">
-        <h3>Tipp 11</h3>
         <h3>PSEUDO ELEMENTE CSS</h3>
         <p>::selection "{{ '{' }}"background: red;"{{ '}' }}" Beispiel macht den markierten Hintergrund rot<br>
             ::marker "{{ '{' }}""{{ '}' }}" Wird für die <li> items verwendet als extra Farbe z.B oder emojis als marker
         </p>
     </div>
 
-
-    <div class="tipp-12">
-        <h3>Tipp 12</h3>
-        <p></p>
-    </div>
 
 </section>
