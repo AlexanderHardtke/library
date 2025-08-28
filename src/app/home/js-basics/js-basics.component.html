@@ -1,43 +1,48 @@
 <section>
     <h1>JS Basics</h1><button routerLink="" class="backBtn">Back</button>
 
-    <div class="tipp-1">
+
+    <div>
         <h3>Tipp 1</h3>
-        <h3>Switch-Case</h3>
-        <p>Bei mehr als 3 if-Abfragen verwenden</p>
+        <h3>Clean Coding</h3>
+        <p>Single Responsibility, gleicher Abstand, open-closed prinziple, Dont repeat yourself, KISS-Prinzip,
+            Open-Closed-Prinzip</p>
     </div>
 
 
-    <div class="tipp-2">
+    <div>
         <h3>Tipp 2</h3>
         <h3>ternary Operator</h3>
-        <p>Bsp:let myTitle = lang == "de" ? "Webseite":"Website"<br>
-            entspricht: if(lang == "de") myTitle = "Webseite" else</p>
+        <p>Bsp:<code>let myTitle = lang == "de" ? "Webseite":"Website"</code><br>
+            entspricht: <code>if(lang == "de") myTitle = "Webseite" else "Website"</code></p>
     </div>
 
 
-    <div class="tipp-3">
+    <div>
         <h3>Tipp 3</h3>
         <h3>Arrow-Function</h3>
-        <p>Bsp: functionName : (i) => &#10101; return 1 + i &#10101;</p>
+        <p>Bsp: <code>functionName : (i) => &#10101; return 1 + i &#10101;</code></p>
     </div>
 
 
-    <div class="tipp-4">
+    <div>
         <h3>Tipp 4</h3>
-        <h3>Clean Coding</h3>
-        <p>Single Responsibility für jede Funktion, gleicher Abstand</p>
-    </div>
-
-
-    <div class="tipp-5">
-        <h3>Tipp 5</h3>
         <h3>Debugger verwenden</h3>
-        <p>Stelle den Stopp da ein wo du den Fehler vermutest und klicke dich mit F9 durch</p>
+        <p>Stelle den Stopp da ein wo du den Fehler vermutest und klicke dich mit F9 durch<br>
+            Alternativ mit console.log arbeiten</p>
     </div>
 
 
-    <div class="tipp-6">
+    <div>
+        <h3>Tipp 5</h3>
+        <h3>let vs const vs var</h3>
+        <p>let definiert nur über die Funktion bis die geschweifte Klammer geschlossen wird (scope) was
+            der Wert ist bei var ist der Wert überall definiert. Const ist eine Konstante und kann nicht geändert
+            werden, nur ausgelesen.</p>
+    </div>
+
+
+    <div>
         <h3>Tipp 6</h3>
         <h3>"null" und "undefined"</h3>
         <p>
@@ -47,7 +52,7 @@
     </div>
 
 
-    <div class="tipp-7">
+    <div>
         <h3>Tipp 7</h3>
         <h3>"==" vs "==="</h3>
         <p>
@@ -57,15 +62,15 @@
     </div>
 
 
-    <div class="tipp-8">
+    <div>
         <h3>Tipp 8</h3>
         <h3>Promise</h3>
         <p>Promise erwartet mit einer asynchronen Funktion darauf das ein bestimmter Parameter zurückgegeben wird bevor
-            der Code fortgeführt wird. .then oder try and catch.</p>
+            der Code fortgeführt wird. .then oder try and catch</p>
     </div>
 
 
-    <div class="tipp-9">
+    <div>
         <h3>Tipp 9</h3>
         <h3>Sortiere ein Array mit randomisierten Zahlen</h3>
         <p>
@@ -75,17 +80,8 @@
     </div>
 
 
-    <div class="tipp-10">
+    <div>
         <h3>Tipp 10</h3>
-        <h3>let vs const vs var</h3>
-        <p>let definiert nur über die Funktion bis die geschweifte Klammer geschlossen wird was
-            der Wert ist bei var ist der Wert überall definiert. Const ist eine Konstante und kann nicht geändert
-            werden, nur ausgelesen.</p>
-    </div>
-
-
-    <div class="tipp-11">
-        <h3>Tipp 11</h3>
         <h3>Programme von JS in exe</h3>
         <p>Electron: benötigt "Node.js" npm install -g electron. => electron index.html<br>
             Neue Datei start.bat führt Befehl aus<br>
