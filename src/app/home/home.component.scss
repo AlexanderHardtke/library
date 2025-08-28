@@ -5,15 +5,8 @@ section {
 }
 
 div {
-    background-color:darkmagenta;
+    background-color:rgb(87, 6, 87);
     height: 150px;
     width: 150px;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    padding: 12px;
-    border-radius: 12px;
 }
