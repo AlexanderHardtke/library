@@ -48,6 +48,13 @@ section {
     }
 }
 
+code {
+    background-color: rgb(26, 26, 21);
+    padding: 2px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
 .backBtn {
     position: fixed;
     z-index: 99;
