@@ -1,8 +1,33 @@
 <section>
     <h1>CSS Tricks</h1><button routerLink="" class="backBtn">Back</button>
 
+
+    <div>
+        <h3>Tipp 0</h3>
+        <h3>Basics</h3>
+        <p>
+            <code>git status</code> zeigt aktuelles repo<br>
+            <code>git branch --all</code>zeigt repo und forks<br>
+            <code>git log</code> um die aktuellen commits anzusehen, und das repo
+        </p>
+    </div>
+
+
     <div>
         <h3>Tipp 1</h3>
+        <h3>git commit</h3>
+        <p>
+            <code>git add .</code> local to staging<br>
+            <code>git commit -m</code> add a comment for the change<br>
+            <code>git push</code> pushes the repo onto github<br>
+            type: description, fix <br>
+            types: fix, feat, build, chore, ci, docs, style, refactor, test
+        </p>
+    </div>
+
+
+    <div>
+        <h3>Tipp 2</h3>
         <h3>Copy Repository with commits</h3>
         <p>git remote add new-origin<br>
             git push new-origin --all<br>
@@ -12,26 +37,85 @@
 
 
     <div>
-        <h3>Tipp 2</h3>
-        <h3>Git Klonen</h3>
-        <p>Git Clone SSH</p>
-    </div>
-
-
-    <div>
         <h3>Tipp 3</h3>
-        <h3>reverse git add</h3>
-        <p>git unstage .</p>
+        <h3>Git Klonen</h3>
+        <p>Git Clone SSH<br>
+            Klont das Repository auf local, ist mit dem original verlinkt</p>
     </div>
 
 
     <div>
         <h3>Tipp 4</h3>
+        <h3>Rückgangig machen</h3>
+        <p>
+            <code>git unstage .</code>holt den commit zurück<br>
+            <code>git reset</code>resettet alle Dateien die momentan in bearbeitung waren<br>
+            <code>git reset --soft HEAD~1</code> letzter Commit in staging area
+        </p>
+    </div>
+
+
+    <div>
+        <h3>Tipp 5</h3>
         <h3>bei commited not synced</h3>
-        <p>git reset --soft HEAD~1 schiebt den letzten Commit ins staging area<br>
-            git reset --mixed HEAD~1 schiebt den letzten Commit komplett zurück ins working directory<br>
-            git reset --hard HEAD~1 löscht alle Änderungen des letzten Commits !!Vorsicht<br>
-            git revert (commitID) ändert den letzten commit zurück funktioniert mit gepushd auf git</p>
+        <p>
+            <code>git reset --mixed HEAD~1</code> letzter Commit komplett zurück ins working directory<br>
+            <code>git reset --hard HEAD~1</code> löscht ALLE Änderungen des letzten Commits !!Vorsicht<br>
+            git revert (commitID) ändert den letzten commit zurück funktioniert mit gepushd auf git
+        </p>
+    </div>
+
+
+    <div>
+        <h3>Tipp 6</h3>
+        <h3><code>git branch name</code></h3>
+        <p>creates a new branch<br>
+            <code>git checkout name</code>to go to new branch<br>
+            <code>git checkout -b newBranch</code> macht beide commands auf einmal<br>
+            <code>git branch -d newBranch</code> löscht den branch
+        </p>
+    </div>
+
+
+    <div>
+        <h3>Tipp 7</h3>
+        <h3>git rebase und merge</h3>
+        <p><code>git merge master</code>master wurde in neuen branch übernommen<br>
+            hilfreich um alles zu überprüfen bevor auf master gepushed wird<br>
+            <code>git rebase master</code>löscht den aktuellen fork und setzt ihn auf master<br>
+            nie auf public branches anwenden
+        </p>
+    </div>
+
+
+    <div>
+        <h3>Tipp 8</h3>
+        <h3>git forktree</h3>
+        <p>Baut sich mehrere Ordner mit verschiedenen git forks die man schnell wechseln kann<br>
+            <code>git wortktree add master</code><br>
+            <code>git wortktree remove master</code>
+        </p>
+    </div>
+
+
+    <div>
+        <h3>Tipp 9</h3>
+        <h3>git fetch vs pull</h3>
+        <p>fetch lädt neue Daten herunter und speichert sie im local repo
+            wird daher keine Daten in bearbeitung verändern<br>
+            pull macht dasselbe und fügt sie direkt in workspace hinzu
+        </p>
+    </div>
+
+
+    <div>
+        <h3>Tipp 7</h3>
+        <h3>git config</h3>
+        <p>
+            <code>git config --global user.name "Blade"</code><br>
+            <code>git config --global user.email "email@global.com"</code><br>
+            setzt username und email
+        </p>
     </div>
 
 </section>
