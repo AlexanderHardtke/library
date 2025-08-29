@@ -31,11 +31,6 @@ export class HomeComponent {
       url: "/Angular",
     },
     {
-      name: "CRUD",
-      useCase: "Simple CRUD for CRM",
-      url: "/CRUD",
-    },
-    {
       name: "AF Authentication",
       useCase: "Angular Fire Authentication",
       url: "/AUTH",
