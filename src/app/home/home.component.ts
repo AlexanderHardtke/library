@@ -41,9 +41,19 @@ export class HomeComponent {
       url: "/GIT",
     },
     {
-      name: "Backend",
-      useCase: "Backend Infos",
-      url: "/BACK",
+      name: "Django",
+      useCase: "Django Infos",
+      url: "/DJANGO",
+    },
+    {
+      name: "Django",
+      useCase: "Django Serializer",
+      url: "/SERIAL",
+    },
+    {
+      name: "SQL",
+      useCase: "SQL Datenbank",
+      url: "/SQL",
     },
     {
       name: "Testing",
@@ -51,7 +61,7 @@ export class HomeComponent {
       url: "/TESTING",
     },
     {
-      name: "Command prompt",
+      name: "CMD",
       useCase: "Command Console",
       url: "/CMD",
     },
@@ -62,12 +72,17 @@ export class HomeComponent {
     },
     {
       name: "RaspberryPi",
-      useCase: "für das hosten auf dem Pi",
+      useCase: "Hosten auf dem Pi",
       url: "/RASP",
     },
     {
+      name: "AI",
+      useCase: "KI Infos",
+      url: "/PROMPT",
+    },
+    {
       name: "C#",
-      useCase: "C# Infos",
+      useCase: "C# Basics",
       url: "/CSHARP",
     },
   ]

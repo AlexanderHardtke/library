@@ -1,2 +1,2 @@
-html, css, js done kannst eetwas mehr in js packen
-Angular
+Git done
+Angular, Django, testing, html, css, js done kannst eetwas mehr in js packen

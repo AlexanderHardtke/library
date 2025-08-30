@@ -24,7 +24,7 @@ export const routes: Routes = [
     { path: 'Angular', component: AngularComponent },
     { path: 'AUTH', component: AngularFireAuthenticationComponent },
     { path: 'GIT', component: GitComponent },
-    { path: 'BACK', component: BackEndComponent },
+    { path: 'DJANGO', component: BackEndComponent },
     { path: 'SERIAL', component: BackEndSerializerComponent },
     { path: 'TESTING', component: TestingComponent },
     { path: 'CMD', component: CmdComponent },

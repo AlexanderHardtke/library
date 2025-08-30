@@ -1,13 +1,40 @@
 <section>
-    <h1>Backend Infos</h1><button routerLink="" class="backBtn">Back</button>
+    <h1>Django Infos</h1><button routerLink="" class="backBtn">Back</button>
+
+    <div>
+        <h3>Tipp 0</h3>
+        <h3>Trottle</h3>
+        <p>Um die Anzahl der Aufrufe pro Tag/Stunde zu begrenzen -> DDOS Attack
+            Throttling ist in etwa wie permissions nur halt anzahlbegrenzt<br>
+            In der View.py die throttle class überschreiben, vorher in throttling.py definieren
+            Allgemein öfters in den importierten Modulen nachlesen wie sie funktionieren.
+        </p>
+    </div>
+
 
     <div>
         <h3>Tipp 1</h3>
-        <h3>Content-type</h3>
-        <p>text/html; charset=UTF-8<br>
-            multipart/Form-data; boundary=something<br>
-            application/json<br>
-            application/xml</p>
+        <h3>Scooping in settings.py</h3>
+        <p>from rest_framework.throttling import UserRateThrottle
+
+            class Questionthrottle(UserRateThrottle):
+            scope = 'question'
+
+            def allow_request(self, request, view):
+            if request.method == "GET":# Beispiel um Get immer zu erlauben
+            return True
+
+            new_scope = 'question-' + request.method.lower() #teilweise im Framework nachschauen um Lösung zu kreiren
+            if new_scope in self.THROTTLE_RATES:
+            self.scope = new_scope
+            self.rate = self.get_rate()
+            self.num_requests, self.duration = self.parse_rate(self.rate)
+
+            return super().allow_request(request, view)
+
+            Andere Methode in view Modul08, ist seperat für eine eionzelne view vs der obere Fall für komplette API
+            einsetzbar
+        </p>
     </div>
 
 
@@ -23,13 +50,13 @@
 
     <div>
         <h3>Tipp 3</h3>
-        <h3>Django</h3>
-        <p>python -m venv env<br>
-            "env\Scripts\activate"
-            pip freeze<br>
-            python -m pip install Django<br>
-            django-admin startproject your_project .<br>
-            python manage.py startapp your_app
+        <h3>venv</h3>
+        <p><code>python -m venv env</code><br>
+            <code>"env\Scripts\activate"</code><br>
+            <code>pip freeze</code><br>
+            <code>python -m pip install Django</code><br>
+            <code>django-admin startproject your_project .</code><br>
+            <code>python manage.py startapp your_app</code>
         </p>
     </div>
 
@@ -37,9 +64,10 @@
     <div>
         <h3>Tipp 4</h3>
         <h3>VIP commands</h3>
-        <p>"env/Scripts/activate"<br>
-            pip freeze > requirements.txt<br>
-            python manage.py runserver</p>
+        <p><code>"env/Scripts/activate"</code><br>
+            <code>pip freeze > requirements.txt</code><br>
+            <code>python manage.py runserver</code>
+        </p>
     </div>
 
 
@@ -47,9 +75,9 @@
         <h3>Tipp 5</h3>
         <h3>Objekte in Datenbank erzeugen</h3>
         <p>Klasse Model.py erstellen<br>
-            python manage.py makemigrations<br>
-            python manage.py migrate<br>
-            python manage.py shell(interaktive Konsole)<br>
+            <code>python manage.py makemigrations</code><br>
+            <code>python manage.py migrate</code><br>
+            <code>python manage.py shell</code>(interaktive Konsole)<br>
             from sales.models import Customer(Name des Programms importiert Datenbank)<br>
             first_customer = Customer(first_name="Mandy", last_name="Musterfrau")<br>
             first_customer.clean_fields() #Validierung<br>
@@ -63,10 +91,11 @@
         <h3>Tipp 6</h3>
         <h3>Objekte read()</h3>
         <p>
-            python manage.py shell(interaktive Konsole)<br>
-            Customer.objects.all()<br>
-            Customer.objects.get(first_name="Mandy")<br>
-            # geht nur wenn es nur einen eindeutigen gibt = 2 gleiche Vornamen ist Fehler, besser mit ID</p>
+            <code>python manage.py shell</code>(interaktive Konsole)<br>
+            <code>Customer.objects.all()</code><br>
+            <code>Customer.objects.get(first_name="Mandy")</code><br>
+            # geht nur wenn es nur einen eindeutigen gibt = 2 gleiche Vornamen ist Fehler, besser mit ID
+        </p>
     </div>
 
     <div>
@@ -110,7 +139,7 @@
     <div>
         <h3>Tipp11</h3>
         <h3>Admin einrichten</h3>
-        <p>python manage.py createsuperuser</p>
+        <p><code>python manage.py createsuperuser</code></p>
     </div>
 
     <div>
@@ -194,19 +223,13 @@
     <div>
         <h3>Tipp20</h3>
         <h3>Live-Server-Reload</h3>
-        <p>Die Lösung für die Live Server Erweiterung in VS Code ist, in die settings.json von VS Code zu gehen und Folgendes hinzuzufügen:
+        <p>Die Lösung für die Live Server Erweiterung in VS Code ist, in die settings.json von VS Code zu gehen und
+            Folgendes hinzuzufügen:
 
             "liveServer.settings.fullReload": false,
             "liveServer.settings.ignoreFiles": ["**/db.json"]
-            
-            Das bewirkt, dass Live Server db.json ignoriert und kein unerwünschtes Reload mehr auslöst.
-        </p>
-    </div>
 
-    <div>
-        <h3>Tipp21</h3>
-        <h3>Django User Model erweitern</h3>
-        <p>
+            Das bewirkt, dass Live Server db.json ignoriert und kein unerwünschtes Reload mehr auslöst.
         </p>
     </div>
 

@@ -15,7 +15,7 @@
         <h3>TDD</h3>
         <p>Test Driven Developement<br>
             Die Tests sind so aufgebaut das sie erst die Models abdecken. Entwicklertests(ModelTests)<br>
-            Erst Tests schreiben, dann das Backend
+            Erst Tests schreiben, dann das Modul
         </p>
     </div>
 
@@ -28,98 +28,22 @@
         </p>
     </div>
 
+
     <div>
         <h3>Tipp 4</h3>
-        <h3>Trottle</h3>
-        <p>Um die Anzahl der Aufrufe pro Tag/Stunde zu begrenzen -> DDOS Attack
-            Throttling ist in etwa wie permissions nur halt anzahlbegrenzt<br>
-            In der View.py die throttle class überschreiben, vorher in throttling.py definieren
-            Allgemein öfters in den importierten Modulen nachlesen wie sie funktionieren.
+        <h3>pytest in docker mit coverage</h3>
+        <p>ng test --code-coverage<br>
+            <code>docker exec videoflix_backend coverage erase</code><br>
+            <code>docker exec -ti videoflix_backend python manage.py shell</code><br>
+            <code>docker exec videoflix_backend python manage.py test</code><br>
+            <code>docker exec videoflix_backend coverage report</code><br>
+            <code>docker exec videoflix_backend coverage html</code><br>
+            <code>docker cp videoflix_backend:/app/htmlcov ./htmlcov</code>
         </p>
     </div>
 
     <div>
         <h3>Tipp 5</h3>
-        <h3>Scooping in settings.py</h3>
-        <p>from rest_framework.throttling import UserRateThrottle
-
-            class Questionthrottle(UserRateThrottle):
-            scope = 'question'
-
-            def allow_request(self, request, view):
-            if request.method == "GET":# Beispiel um Get immer zu erlauben
-            return True
-
-            new_scope = 'question-' + request.method.lower() #teilweise im Framework nachschauen um Lösung zu kreiren
-            if new_scope in self.THROTTLE_RATES:
-            self.scope = new_scope
-            self.rate = self.get_rate()
-            self.num_requests, self.duration = self.parse_rate(self.rate)
-
-            return super().allow_request(request, view)
-
-            Andere Methode in view Modul08, ist seperat für eine eionzelne view vs der obere Fall für komplette API
-            einsetzbar
-        </p>
-    </div>
-
-    <div>
-        <h3>Tipp 6</h3>
-        <h3>Filtern mit queryset</h3>
-        <p>am ende der URL ?content=Django&author=bob<br>
-            mit Postman in die Params den key z.B. content und den Value Django
-        </p>
-    </div>
-
-    <div>
-        <h3>Tipp 7</h3>
-        <h3>filter search</h3>
-        <p>implementieren um auch nur Bruchstücke oder keywords zu suchen<br>
-            prefixes vor dem search um zu spezifizieren
-        </p>
-    </div>
-
-    <div>
-        <h3>Tipp 8</h3>
-        <h3>ordering -> sortierung</h3>
-        <p>wird genau so implementiert wie filter search<br>
-            kann mit - umgedreht werden oder mit anderen values z.B. in Postman keyword ordering geändert werden
-        </p>
-    </div>
-
-    <div>
-        <h3>Tipp 8</h3>
-        <h3>pagination</h3>
-        <p>implementieren um größere Daten Mengen in mehreren Seiten abzubilden<br>
-            Postmann = key page und value mit der nummer der Seite<br>
-            page-site lässt sich auch im backend ändern<br>
-            Alternativ auch als default setzen möglich in der setting.py
-        </p>
-    </div>
-
-    <div>
-        <h3>Tipp 9</h3>
-        <h3>pagination limit offset</h3>
-        <p>Andere Methode aber mit einem Limit und einem offset<br>
-            User kann hier einfacher sagen ab wann und wie viel anzeigen
-        </p>
-    </div>
-
-    <div>
-        <h3>Tipp 10</h3>
-        <h3>pytest in docker mit coverage</h3>
-        <p>ng test --code-coverage<br>
-            docker exec videoflix_backend coverage erase<br>
-            docker exec -ti videoflix_backend python manage.py shell<br>
-            docker exec videoflix_backend python manage.py test<br>
-            docker exec videoflix_backend coverage report<br>
-            docker exec videoflix_backend coverage html<br>
-            docker cp videoflix_backend:/app/htmlcov ./htmlcov
-        </p>
-    </div>
-
-    <div>
-        <h3>Tipp 11</h3>
         <h3>Jasmin/Karma tests</h3>
         <p>it('description', () => ...) ist wie def testxyz beschreibt den Test<br>
             expect(...).toBe(...) ist wie assertequal oder assertTrue<br>
@@ -129,33 +53,35 @@
     </div>
 
     <div>
-        <h3>Tipp 12</h3>
+        <h3>Tipp 6</h3>
         <h3>Komponente instanziieren (Setup)</h3>
-        <p>fixture = TestBed.createComponent(FooterComponent);<br>
-            component = fixture.componentInstance;<br>
-            fixture.detectChanges(); // wichtig!
+        <p><code>fixture = TestBed.createComponent(FooterComponent);</code><br>
+            <code>component = fixture.componentInstance;</code><br>
+            <code>fixture.detectChanges(); // wichtig!</code>
         </p>
     </div>
 
     <div>
-        <h3>Tipp 13</h3>
+        <h3>Tipp 7</h3>
         <h3>Daten manipulieren (wie Zustand simulieren)</h3>
-        <p>component.currentUrl = '/info';<br>
-            fixture.detectChanges(); // nach jeder Änderung nötig!
+        <p><code>component.currentUrl = '/info';</code><br>
+            <code>fixture.detectChanges();</code> // nach jeder Änderung nötig!
         </p>
     </div>
 
     <div>
-        <h3>Tipp 14</h3>
+        <h3>Tipp 8</h3>
         <h3>DOM abfragen (was wurde gerendert?)</h3>
-        <p>const section = fixture.debugElement.query(By.css('section'));<br>
+        <p><code>const section = fixture.debugElement<br>
+            .query(By.css('section'));</code><br>
         </p>
     </div>
 
-        <div>
-        <h3>Tipp 15</h3>
+    <div>
+        <h3>Tipp 9</h3>
         <h3>Erwartung formulieren</h3>
-        <p>expect(section.nativeElement.classList).toContain('d-none');<br>
+        <p><code>expect(section.nativeElement.<br>
+            classList).toContain('d-none');</code>
         </p>
     </div>
 
