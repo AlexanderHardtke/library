@@ -22,6 +22,7 @@ section {
     flex-wrap: wrap;
     gap: 16px;
     place-content: center;
+    margin-bottom: 40px;
 
     >div {
         background-color: rgb(132, 36, 68);
@@ -35,7 +36,7 @@ section {
         padding: 12px;
         border-radius: 12px;
         transition: 0.2s ease-in;
-        overflow:auto;
+        overflow: auto;
 
         &:hover {
             transition: 0.2s ease-in;

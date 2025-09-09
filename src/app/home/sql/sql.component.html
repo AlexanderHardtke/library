@@ -56,38 +56,81 @@
     </div>
 
     <div>
-        <h3>Tipp 1</h3>
-        <h3>Join</h3>
-        <p><code></code>
+        <h3>Tipp 7</h3>
+        <h3>Tabellen verbinden</h3>
+        <p><code>SELECT * FROM Orders<br>
+            LEFT JOIN Customers<br>
+            ON Orders.CustomerID = Customers.CustomerID<br>
+            WHERE Country="Mexico"</code>
         </p>
     </div>
 
     <div>
-        <h3>Tipp 1</h3>
-        <h3></h3>
-        <p><code></code>
+        <h3>Tipp 8</h3>
+        <h3>Join mit neuer Tabelle</h3>
+        <p><code>CREATE TABLE ProductOrders AS
+            SELECT ProductName, CustomerName, Price, Quantity FROM Products<br>
+            LEFT JOIN Orders<br>
+            ON Orders.ProductID = Products.ProductID<br>
+            LEFT JOIN Customers<br>
+            ON Orders.CustomerID = Customers.CustomerID<br>
+            WHERE ProductName = "Chais"</code>
         </p>
     </div>
 
     <div>
-        <h3>Tipp 1</h3>
-        <h3></h3>
-        <p><code></code>
+        <h3>Tipp 9</h3>
+        <h3>Wert in Tabelle löschen</h3>
+        <p><code>DELETE FROM ProductOrders WHERE "Chais"</code>
         </p>
     </div>
 
     <div>
-        <h3>Tipp 1</h3>
-        <h3>Grundlagen SQL Infos</h3>
-        <p>in SQL: SELECT*FROM employees<br>
-            WHERE Alter &lt; 30 AND ...<br>
-            in Django: employees.filter(alter__lte=30)<br>
+        <h3>Tipp 10</h3>
+        <h3>Tabelle leeren</h3>
+        <p><code>DELETE FROM ProductOrders</code><br><br>
+            Tabelle löschen<br>
+            <code>DROP TABLE ProductOrders</code>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 11</h3>
+        <h3>Rechnen in neuer Spalte</h3>
+        <p><code>SELECT ProductName, CustomerName, Price, Quantity, Price * Quantity AS Total  FROM ProductOrders</code>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 12</h3>
+        <h3>Summe und Average</h3>
+        <p><code>SELECT SUM(Price * Quantity) AS Total, AVG(Price * Quantity) AS Average  FROM ProductOrders</code>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 13</h3>
+        <h3>Daten Updaten</h3>
+        <p>Hier am besten immer ID auswählen
+            <code>UPDATE Customers<br>
+            SET CustomerName="Alex Keks"<br>
+            WHERE CustomerID="6"</code>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 14</h3>
+        <h3>SQL Django</h3>
+        <p>in SQL: <br>
+            <code>SELECT*FROM employees<br>
+            WHERE Alter &lt; 30 AND ...<br></code>
+            in Django:<br><code>employees.filter(alter__lte=30)</code><br>
             in Django einfacher zu schreiben als reines SQL
         </p>
     </div>
 
     <div>
-        <h3>Tipp 2</h3>
+        <h3>Tipp 15</h3>
         <h3>SQL Injection</h3>
         <p>bei nichtabgefragten Dingen vom Frontend<br>
             SELECT*FROM employees<br>
