@@ -3,6 +3,81 @@
 
     <div>
         <h3>Tipp 1</h3>
+        <h3>Grundlagen SQL</h3>
+        <p>SQL ist eine Tabellendatenbank mit einfachen Befehlen die man aber miteinander kombinieren kann
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 2</h3>
+        <h3>Zeige alle Tabellen</h3>
+        <p><code>SELECT name<br>
+            FROM sqlite_master<br>
+            WHERE type = 'table'</code>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 3</h3>
+        <h3>Tabelle anzeigen</h3>
+        <p><code>SELECT * FROM Orders</code><br>
+            Tabelle limitieren und nach bestimmtem Kriterium filtern<br>
+            ASC oder DESC oder Limit setzen<br>
+            <code>ORDER BY Quantity LIMIT 2</code>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 4</h3>
+        <h3>Reihe hinzufügen</h3>
+        <p>kann Reihen NICHT austauschen<br>
+            <code>INSERT INTO Customers(CustomerID, CustomerName, ContactName, Country)<br>
+            VALUES ("6" ,"Alex the keks", "AlexKeks", "Germany")</code>
+        </p>
+    </div>
+
+
+    <div>
+        <h3>Tipp 5</h3>
+        <h3>Filtern</h3>
+        <p>Filtert nach einem oder mehreren Eingaben<br>
+            <code>SELECT * FROM Orders WHERE ProductID=2</code><br>
+            <code>SELECT * FROM Orders WHERE ProductID IN (1,2)</code>
+        </p>
+    </div>
+
+
+    <div>
+        <h3>Tipp 6</h3>
+        <h3>Erweitertes Filtern</h3>
+        <p>mit Filtern eines Strings mit Like "%"
+            <code>SELECT * FROM Customers WHERE (ContactName LIKE "A%" AND Country="Germany") OR (Country="Sweden" AND CustomerName LIKE "B%")</code>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 1</h3>
+        <h3>Join</h3>
+        <p><code></code>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 1</h3>
+        <h3></h3>
+        <p><code></code>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 1</h3>
+        <h3></h3>
+        <p><code></code>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 1</h3>
         <h3>Grundlagen SQL Infos</h3>
         <p>in SQL: SELECT*FROM employees<br>
             WHERE Alter &lt; 30 AND ...<br>
@@ -11,7 +86,7 @@
         </p>
     </div>
 
-     <div>
+    <div>
         <h3>Tipp 2</h3>
         <h3>SQL Injection</h3>
         <p>bei nichtabgefragten Dingen vom Frontend<br>
