@@ -85,12 +85,26 @@
         </p>
     </div>
 
-    
+
     <div>
         <h3>Tipp 11</h3>
         <h3>Schriftarten</h3>
         <p>Immer downloaden, nie über Google einbinden</p>
     </div>
 
+
+    <div>
+        <h3>Tipp 12</h3>
+        <h3>detail-tag Schließen ohne JS</h3>
+        <p><code>details[open] summary::before {{ '{' }}
+            content: "";
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            cursor: auto;
+            {{ '}' }}</code></p>
+        </div>
 
 </section>
