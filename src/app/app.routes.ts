@@ -15,6 +15,7 @@ import { TestingComponent } from './home/testing/testing.component';
 import { SQLComponent } from './home/sql/sql.component';
 import { PromptsComponent } from './home/prompts/prompts.component';
 import { CSHarpComponent } from './home/csharp/csharp.component';
+import { PrimeNgComponent } from './home/prime-ng/prime-ng.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -22,6 +23,7 @@ export const routes: Routes = [
     { path: 'HTML', component: HtmlComponent },
     { path: 'JS', component: JsBasicsComponent },
     { path: 'Angular', component: AngularComponent },
+    { path: 'PrimeNG', component: PrimeNgComponent },
     { path: 'AUTH', component: AngularFireAuthenticationComponent },
     { path: 'GIT', component: GitComponent },
     { path: 'DJANGO', component: BackEndComponent },

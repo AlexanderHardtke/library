@@ -1,0 +1,83 @@
+<section>
+    <h1>PrimeNG</h1><button routerLink="" class="backBtn">Back</button>
+
+
+    <div>
+        <h3>Tipp 1</h3>
+        <h3>PrimeNG installieren</h3>
+        <p><a href="https://primeng.org/installation">Link to Page</a><br><br>
+            create myPreset.ts<br>
+            <a href="https://primeng.org/theming">export with default</a>
+    </div>
+
+    <div ngNonBindable>
+        <h3>Tipp 2</h3>
+        <h3>Preset example</h3>
+        <p>
+            <code>
+      {{const MyPreset = definePreset(Aura, {
+        semantic: {
+          primary: {
+            50: '{orange.50}',
+            100: '{orange.100}',
+            200: '{orange.200}',
+            300: '{orange.300}',
+            400: '{orange.400}',
+            500: '{orange.500}',
+            600: '{orange.600}',
+            700: '{orange.700}',
+            800: '{orange.800}',
+            900: '{orange.900}',
+          }
+        },
+        components: {
+          button: {
+            root: {
+              borderRadius: '80px'
+            }
+          }
+        },
+        tokens: {
+          colorSurface: '#f9f9f9',
+          colorText: '#333'
+        }
+      });}}
+    </code>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 3</h3>
+        <h3>Eigene Komponente umschreiben</h3>
+        <p><code>main "{{ '{' }}"
+    background: black;
+    --p-button-primary-background: red;
+    --p-button-primary-color: #fff;
+    --p-button-primary-hover-color: #fff;
+    "{{ '}' }}"</code> </p>
+    </div>
+
+    <div>
+        <h3>Tipp 4</h3>
+        <h3>Dark/Lightmode</h3>
+        <p>in config.ts<br>
+            <code>option: {{'{'}}<br>
+            darkModeSelector: '.my-app-dark'<br>
+            {{'}'}}</code> einfügen<br>
+            <code>
+            toggleDarkMode() {{'{'}}<br>
+            const html = document.documentElement;<br>
+            html.classList.toggle('my-app-dark');<br>
+            {{'}'}}
+            </code>
+        </p>
+    </div>
+
+    <div>
+        <h3>Tipp 5</h3>
+        <h3></h3>
+        <p> </p>
+    </div>
+
+
+</section>

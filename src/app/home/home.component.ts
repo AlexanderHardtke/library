@@ -31,6 +31,11 @@ export class HomeComponent {
       url: "/Angular",
     },
     {
+      name: "PrimeNG",
+      useCase: "CSS Library",
+      url: "/PrimeNG",
+    },
+    {
       name: "AF Authentication",
       useCase: "Angular Fire Authentication",
       url: "/AUTH",
